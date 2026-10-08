@@ -1,26 +1,191 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Typography Families */
+  --font-serif: "DM Serif Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+
+  /* Primary Palette */
+  --color-deep-teal: #0B4F4A;
+  --color-dark-teal: #073A37;
+  --color-warm-ivory: #FBF8F3;
+  --color-soft-sand: #F3EEE6;
+  --color-soft-peach: #F8EDE7;
+  --color-terracotta: #C96F4F;
+  --color-champagne: #C6A15B;
+  --color-charcoal: #202A28;
+  --color-white: #FFFFFF;
+
+  /* Semantic Aliases */
+  --color-primary: #0B4F4A;
+  --color-primary-dark: #073A37;
+  --color-accent: #C96F4F;
+  --color-gold: #C6A15B;
+  --color-bg: #FBF8F3;
+  --color-text: #202A28;
+  --color-text-muted: #566965;
+  --color-text-light: #8A9E9B;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    background-color: var(--color-warm-ivory);
+    color: var(--color-charcoal);
+  }
+  body {
+    background-color: var(--color-warm-ivory);
+    color: var(--color-charcoal);
+    overflow-x: hidden;
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 400 !important;
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background-color: #C6A15B;
+    color: #FFFFFF;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Editorial Color Classes ─── */
+.bg-warm-ivory { background-color: #FBF8F3; }
+.bg-soft-sand  { background-color: #F3EEE6; }
+.bg-soft-peach { background-color: #F8EDE7; }
+.bg-deep-teal  { background-color: #0B4F4A; }
+.bg-dark-teal  { background-color: #073A37; }
+.bg-charcoal   { background-color: #202A28; }
+.text-deep-teal { color: #0B4F4A; }
+.text-dark-teal { color: #073A37; }
+.text-terracotta { color: #C96F4F; }
+.text-champagne { color: #C6A15B; }
+.text-charcoal { color: #202A28; }
+
+/* ─── Smooth Section Transitions ─── */
+.section-transition-ivory-to-sand {
+  background: linear-gradient(180deg, #FBF8F3 0%, #F3EEE6 100%);
+}
+.section-transition-sand-to-white {
+  background: linear-gradient(180deg, #F3EEE6 0%, #FFFFFF 100%);
+}
+.section-transition-white-to-ivory {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FBF8F3 100%);
+}
+.section-transition-ivory-to-peach {
+  background: linear-gradient(180deg, #FBF8F3 0%, #F8EDE7 100%);
+}
+.section-transition-peach-to-white {
+  background: linear-gradient(180deg, #F8EDE7 0%, #FFFFFF 100%);
+}
+
+/* ─── Glass & Blur Utilities ─── */
+.glass-nav {
+  background: rgba(251, 248, 243, 0.88);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+}
+.glass-nav-scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  box-shadow: 0 4px 30px -10px rgba(11, 79, 74, 0.07);
+  border-bottom: 1px solid rgba(11, 79, 74, 0.05);
+}
+
+/* ─── Editorial Borders & Cards ─── */
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(11, 79, 74, 0.07);
+  box-shadow: 0 4px 20px -8px rgba(32, 42, 40, 0.04);
+  transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.editorial-card:hover {
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 20px 48px -12px rgba(11, 79, 74, 0.1);
+  transform: translateY(-4px);
+}
+
+.editorial-card-peach {
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 111, 79, 0.12);
+  box-shadow: 0 4px 20px -8px rgba(201, 111, 79, 0.05);
+}
+
+/* ─── Continuous Marquee ─── */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 38s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Subtle Gentle Floating ─── */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* ─── Slow Hero Image Zoom ─── */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+.animate-slow-zoom {
+  animation: slowZoom 22s ease-in-out infinite;
+}
+
+/* ─── Gold / Champagne Accent Text ─── */
+.champagne-gradient-text {
+  background: linear-gradient(135deg, #DFCA97 0%, #C6A15B 60%, #9F7E3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #C6A15B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0B4F4A;
+}
+
+/* ─── Hide default cursor when custom cursor is active on desktop ─── */
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [data-cursor] {
+    cursor: none !important;
+  }
+}
+
+/* ─── Comparison Slider ─── */
+.comparison-slider-handle {
+  touch-action: none;
+  user-select: none;
 }

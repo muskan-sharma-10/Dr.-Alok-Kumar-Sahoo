@@ -1,0 +1,41 @@
+"use client";
+
+import { Phone, Calendar, MessageSquare } from "lucide-react";
+
+interface StickyMobileBarProps {
+  onOpenConsultation: () => void;
+}
+
+export default function StickyMobileBar({ onOpenConsultation }: StickyMobileBarProps) {
+  return (
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#042926]/97 backdrop-blur-lg border-t border-[#C9A45C]/20 px-4 py-2.5 shadow-2xl">
+      <div className="grid grid-cols-3 gap-2 max-w-md mx-auto">
+        <a
+          href="tel:+919717503031"
+          className="py-2.5 rounded-xl bg-[#073A37] text-white border border-[#C9A45C]/15 text-[11px] font-semibold flex flex-col items-center justify-center gap-1 active:scale-95 transition-all"
+        >
+          <Phone className="w-3.5 h-3.5 text-[#C9A45C]" />
+          <span>Call Now</span>
+        </a>
+
+        <a
+          href="https://wa.me/919717503031?text=Hi%20Alloroots%2C%20I%20want%20to%20know%20more%20about%20Hair%20Transplant%20consultation"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="py-2.5 rounded-xl bg-[#073A37] text-white border border-[#C9A45C]/15 text-[11px] font-semibold flex flex-col items-center justify-center gap-1 active:scale-95 transition-all"
+        >
+          <MessageSquare className="w-3.5 h-3.5 text-[#C9A45C]" />
+          <span>WhatsApp</span>
+        </a>
+
+        <button
+          onClick={onOpenConsultation}
+          className="py-2.5 rounded-xl bg-[#C9A45C] text-[#042926] text-[11px] font-bold flex flex-col items-center justify-center gap-1 shadow-md active:scale-95 transition-all cursor-pointer"
+        >
+          <Calendar className="w-3.5 h-3.5" />
+          <span>Book Consult</span>
+        </button>
+      </div>
+    </div>
+  );
+}

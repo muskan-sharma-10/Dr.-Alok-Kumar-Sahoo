@@ -1,69 +1,106 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import CustomCursor from "@/components/CustomCursor";
+import Hero from "@/components/Hero";
+import TrustStrip from "@/components/TrustStrip";
+import NewsSection from "@/components/NewsSection";
+import ServicesSection from "@/components/ServicesSection";
+import SurgeonSection from "@/components/SurgeonSection";
+import ExpertTeamSection from "@/components/ExpertTeamSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import NumbersSection from "@/components/NumbersSection";
+import BeforeAfterSliderSection from "@/components/BeforeAfterSliderSection";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import PatientJourney from "@/components/PatientJourney";
+import HairRestorationStory from "@/components/HairRestorationStory";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ClinicsSection from "@/components/ClinicsSection";
+import CostCalculator from "@/components/CostCalculator";
+import FaqSection from "@/components/FaqSection";
+import ConsultationCTA from "@/components/ConsultationCTA";
+import ContactFormSection from "@/components/ContactFormSection";
+import Footer from "@/components/Footer";
+import ConsultationModal from "@/components/ConsultationModal";
+import StickyMobileBar from "@/components/StickyMobileBar";
 
 export default function Home() {
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+
+  const openConsultation = () => setIsConsultationOpen(true);
+  const closeConsultation = () => setIsConsultationOpen(false);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="min-h-screen bg-[#FBF8F3] text-[#202A28] selection:bg-[#C6A15B] selection:text-white">
+      {/* 0. Minimal Luxury Custom Cursor (Desktop Only) */}
+      <CustomCursor />
+
+      {/* 1. Refined Sticky Navbar with Trust Marquee */}
+      <Navbar onOpenConsultation={openConsultation} />
+
+      {/* 2. Cinematic Editorial Hero (Warm Ivory + Dr. Alok Portrait + Live Badges) */}
+      <Hero onOpenConsultation={openConsultation} />
+
+      {/* 3. Trust Strip (White + Google 5.0 Star Pillar Bar) */}
+      <TrustStrip />
+
+      {/* 4. As Featured In — Continuous Moving Media Marquee (White + Grayscale) */}
+      <NewsSection />
+
+      {/* 5. Interactive Services Explorer (Soft Sand + Vertical Selector + Large Image Preview) */}
+      <ServicesSection onOpenConsultation={openConsultation} />
+
+      {/* 6. Chief Surgeon Editorial Feature (White + Dr. Alok Parallax + AIIMS Floating Badges) */}
+      <SurgeonSection onOpenConsultation={openConsultation} />
+
+      {/* 7. AIIMS Expert Team Showcase (Featured Active Doctor + Carousel Selector) */}
+      <ExpertTeamSection onOpenConsultation={openConsultation} />
+
+      {/* 8. Why Choose Us (Deep Teal Accent Feature + Interactive 6-Pillar Explorer) */}
+      <WhyChooseUs />
+
+      {/* 9. Numbers That Matter (Warm Ivory + 120px Editorial Light Serif Typography Wall) */}
+      <NumbersSection />
+
+      {/* 10. Draggable Before / After Comparison Slider (COMPARE Cursor + Real Cases) */}
+      <BeforeAfterSliderSection onOpenConsultation={openConsultation} />
+
+      {/* 11. Staggered Visual Case-Study Gallery (VIEW RESULT Cursor + Detail Modal) */}
+      <BeforeAfterGallery onOpenConsultation={openConsultation} />
+
+      {/* 12. Patient Journey Timeline (Horizontal Scroll Driven by Vertical Scrolling) */}
+      <PatientJourney />
+
+      {/* 13. Cinematic Video Documentary Area (PLAY Cursor + HD Modal) */}
+      <HairRestorationStory onOpenConsultation={openConsultation} />
+
+      {/* 14. Editorial Patient Stories & Testimonials (Soft Peach + Horizontal Sliding Cards) */}
+      <TestimonialsSection />
+
+      {/* 15. Interactive Clinic Facility Selector (White + Delhi, Bhubaneswar, Chennai, Uttarakhand) */}
+      <ClinicsSection onOpenConsultation={openConsultation} />
+
+      {/* 16. Cost & 0% EMI Calculator (Norwood Stage Graft Estimator) */}
+      <CostCalculator onOpenConsultation={openConsultation} />
+
+      {/* 17. Editorial FAQ (Warm Ivory + 01/02 Animated Numbers + Expanding Answers) */}
+      <FaqSection />
+
+      {/* 18. Consultation CTA (Deep Teal & Champagne Accent Conversion Bar) */}
+      <ConsultationCTA onOpenConsultation={openConsultation} />
+
+      {/* 19. Contact & Appointment Booking Form */}
+      <ContactFormSection />
+
+      {/* 20. Editorial Footer */}
+      <Footer onOpenConsultation={openConsultation} />
+
+      {/* Consultation Modal */}
+      <ConsultationModal isOpen={isConsultationOpen} onClose={closeConsultation} />
+
+      {/* Sticky Mobile Floating Action Bar */}
+      <StickyMobileBar onOpenConsultation={openConsultation} />
+    </main>
   );
 }
