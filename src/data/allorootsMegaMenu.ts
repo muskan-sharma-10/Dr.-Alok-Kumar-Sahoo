@@ -147,8 +147,13 @@ export const navigationHierarchy: NavDropdown[] = [
       { title: "Hair Restoration Blog", desc: "Evidence-backed hair care guides & clinical insights", href: "/blog" },
       { title: "Frequently Asked Questions", desc: "Procedure timing, recovery, cost & graft counts", href: "/faq" },
       { title: "Cost & 0% EMI Calculator", desc: "Calculate your exact graft requirement online", href: "/#calculator", badge: "Instant" },
+      { title: "Contact Us & Appointments", desc: "Reach our clinic coordinators & team", href: "/contact-us" },
       { title: "Franchise & Partner Inquiries", desc: "Join AlloRoots pan-India network", href: "/contact-us" },
       { title: "Medical Tourism in India", desc: "International patient concierge service", href: "/medical-tourism" },
     ],
+  },
+  {
+    label: "Contact",
+    href: "/contact-us",
   },
 ];

@@ -8,17 +8,27 @@ import { Phone, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { siteImages } from "@/data/siteImages";
 import { navigationHierarchy, NavDropdown, MegaCategory } from "@/data/allorootsMegaMenu";
 import ServicesMegaMenu from "./ServicesMegaMenu";
+import { useConsultation } from "@/context/ConsultationContext";
 
 interface NavbarProps {
   onOpenConsultation?: () => void;
 }
 
 export default function Navbar({ onOpenConsultation }: NavbarProps) {
+  const { openConsultation } = useConsultation();
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleConsultationClick = () => {
+    if (onOpenConsultation) {
+      onOpenConsultation();
+    } else {
+      openConsultation();
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -154,7 +164,8 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               </a>
 
               <button
-                onClick={onOpenConsultation}
+                type="button"
+                onClick={handleConsultationClick}
                 data-cursor="cta"
                 className="hidden sm:inline-flex items-center justify-center gap-2 w-[158px] h-[48px] rounded-full bg-[#0B4F4A] text-white text-[13.5px] font-medium tracking-wide hover:bg-[#073A37] transition-all duration-300 hover:shadow-lg hover:shadow-[#0B4F4A]/25 whitespace-nowrap group cursor-pointer border border-[#C6A15B]/30"
               >
@@ -208,21 +219,26 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               <nav className="p-4 space-y-1">
                 {navigationHierarchy.map((item) => (
                   <div key={item.label}>
-                    <button
-                      onClick={() => {
-                        if (item.simpleLinks || item.categories) {
+                    {item.simpleLinks || item.categories ? (
+                      <button
+                        type="button"
+                        onClick={() => {
                           setMobileSubmenu(mobileSubmenu === item.label ? null : item.label);
-                        } else {
-                          setMobileOpen(false);
-                        }
-                      }}
-                      className="w-full flex items-center justify-between px-3 py-3 rounded-lg text-[15px] font-medium text-[#1E2E2C] hover:bg-[#FAF7F1] transition-colors cursor-pointer"
-                    >
-                      <span>{item.label}</span>
-                      {(item.simpleLinks || item.categories) && (
+                        }}
+                        className="w-full flex items-center justify-between px-3 py-3 rounded-lg text-[15px] font-medium text-[#1E2E2C] hover:bg-[#FAF7F1] transition-colors cursor-pointer"
+                      >
+                        <span>{item.label}</span>
                         <ChevronDown className={`w-4 h-4 text-[#5A7370] transition-transform duration-300 ${mobileSubmenu === item.label ? "rotate-180" : ""}`} />
-                      )}
-                    </button>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href || "#"}
+                        onClick={() => setMobileOpen(false)}
+                        className="w-full flex items-center justify-between px-3 py-3 rounded-lg text-[15px] font-medium text-[#1E2E2C] hover:bg-[#FAF7F1] transition-colors"
+                      >
+                        <span>{item.label}</span>
+                      </Link>
+                    )}
 
                     <AnimatePresence>
                       {mobileSubmenu === item.label && (
@@ -270,7 +286,8 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               {/* Mobile CTA */}
               <div className="p-5 mt-4 border-t border-[#0B4F4A]/8">
                 <button
-                  onClick={() => { setMobileOpen(false); onOpenConsultation?.(); }}
+                  type="button"
+                  onClick={() => { setMobileOpen(false); handleConsultationClick(); }}
                   className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#0B4F4A] text-white font-semibold text-[15px] hover:bg-[#073A37] transition-colors cursor-pointer"
                 >
                   <Phone className="w-4 h-4" />

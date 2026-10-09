@@ -179,7 +179,13 @@
   body.has-custom-cursor,
   body.has-custom-cursor a,
   body.has-custom-cursor button,
-  body.has-custom-cursor [data-cursor] {
+  body.has-custom-cursor [data-cursor],
+  body.has-custom-cursor [role="button"],
+  body.has-custom-cursor .cursor-pointer,
+  body.has-custom-cursor label,
+  body.has-custom-cursor summary,
+  body.has-custom-cursor input[type="button"],
+  body.has-custom-cursor input[type="submit"] {
     cursor: none !important;
   }
 }

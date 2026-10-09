@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import CustomCursor from "@/components/CustomCursor";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import NewsSection from "@/components/NewsSection";
@@ -23,20 +22,14 @@ import FaqSection from "@/components/FaqSection";
 import ConsultationCTA from "@/components/ConsultationCTA";
 import ContactFormSection from "@/components/ContactFormSection";
 import Footer from "@/components/Footer";
-import ConsultationModal from "@/components/ConsultationModal";
 import StickyMobileBar from "@/components/StickyMobileBar";
+import { useConsultation } from "@/context/ConsultationContext";
 
 export default function Home() {
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-
-  const openConsultation = () => setIsConsultationOpen(true);
-  const closeConsultation = () => setIsConsultationOpen(false);
+  const { openConsultation } = useConsultation();
 
   return (
     <main className="min-h-screen bg-[#FBF8F3] text-[#202A28] selection:bg-[#C6A15B] selection:text-white">
-      {/* 0. Minimal Luxury Custom Cursor (Desktop Only) */}
-      <CustomCursor />
-
       {/* 1. Refined Sticky Navbar with Trust Marquee */}
       <Navbar onOpenConsultation={openConsultation} />
 
@@ -99,9 +92,6 @@ export default function Home() {
 
       {/* 20. Editorial Footer */}
       <Footer onOpenConsultation={openConsultation} />
-
-      {/* Consultation Modal */}
-      <ConsultationModal isOpen={isConsultationOpen} onClose={closeConsultation} />
 
       {/* Sticky Mobile Floating Action Bar */}
       <StickyMobileBar onOpenConsultation={openConsultation} />

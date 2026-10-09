@@ -4,8 +4,10 @@ import { MessageCircle, Calculator, Image as ImageIcon, Calendar, Phone } from "
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useConsultation } from "@/context/ConsultationContext";
 
 export default function FloatingActions() {
+  const { openConsultation } = useConsultation();
   const [hoveredWidget, setHoveredWidget] = useState<string | null>(null);
 
   return (
@@ -61,9 +63,10 @@ export default function FloatingActions() {
         </Link>
 
         {/* Book Online Consultation */}
-        <Link 
-          href="/contact-us" 
-          className="pointer-events-auto flex items-center justify-end group transition-all duration-300"
+        <button 
+          type="button"
+          onClick={openConsultation}
+          className="pointer-events-auto flex items-center justify-end group transition-all duration-300 cursor-pointer text-left"
           onMouseEnter={() => setHoveredWidget('book')}
           onMouseLeave={() => setHoveredWidget(null)}
         >
@@ -81,7 +84,7 @@ export default function FloatingActions() {
               <Calendar className="w-5 h-5 text-[#C9A45C]" />
             )}
           </div>
-        </Link>
+        </button>
       </div>
 
       {/* Bottom Right WhatsApp Widget */}

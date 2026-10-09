@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 import { ArrowUpRight, Play, Eye, SlidersHorizontal } from "lucide-react";
 
 export type CursorType = "default" | "view" | "play" | "compare" | "cta" | "drag" | "hidden";
 
 export default function CustomCursor() {
+  const pathname = usePathname();
   const [cursorType, setCursorType] = useState<CursorType>("default");
   const [isVisible, setIsVisible] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -18,6 +20,11 @@ export default function CustomCursor() {
   const springConfig = { damping: 28, stiffness: 320, mass: 0.5 };
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
+
+  // Reset to default cursor on page route transition
+  useEffect(() => {
+    setCursorType("default");
+  }, [pathname]);
 
   useEffect(() => {
     // Only enable on desktop devices with fine pointer
@@ -45,11 +52,17 @@ export default function CustomCursor() {
         const type = target.getAttribute("data-cursor") as CursorType;
         setCursorType(type || "cta");
       } else {
-        const isClickable = (e.target as HTMLElement)?.closest("button, a, input, select, textarea");
-        if (isClickable) {
-          setCursorType("cta");
+        // If hovering text input or textarea, hide custom badge for native typing cursor
+        const isTextInput = (e.target as HTMLElement)?.closest("input:not([type='button']):not([type='submit']):not([type='checkbox']):not([type='radio']), textarea");
+        if (isTextInput) {
+          setCursorType("hidden");
         } else {
-          setCursorType("default");
+          const isClickable = (e.target as HTMLElement)?.closest("button, a, select, [role='button'], .cursor-pointer, input[type='button'], input[type='submit']");
+          if (isClickable) {
+            setCursorType("cta");
+          } else {
+            setCursorType("default");
+          }
         }
       }
     };
@@ -70,10 +83,10 @@ export default function CustomCursor() {
     };
   }, [mouseX, mouseY, isVisible]);
 
-  if (!isDesktop || !isVisible) return null;
+  if (!isDesktop || !isVisible || cursorType === "hidden") return null;
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden">
       {/* Follower Badge / Bubble */}
       <motion.div
         style={{

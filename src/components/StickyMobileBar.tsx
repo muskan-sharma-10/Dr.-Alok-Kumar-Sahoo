@@ -1,12 +1,22 @@
 "use client";
 
 import { Phone, Calendar, MessageSquare } from "lucide-react";
+import { useConsultation } from "@/context/ConsultationContext";
 
 interface StickyMobileBarProps {
-  onOpenConsultation: () => void;
+  onOpenConsultation?: () => void;
 }
 
 export default function StickyMobileBar({ onOpenConsultation }: StickyMobileBarProps) {
+  const { openConsultation } = useConsultation();
+
+  const handleConsultation = () => {
+    if (onOpenConsultation) {
+      onOpenConsultation();
+    } else {
+      openConsultation();
+    }
+  };
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#042926]/97 backdrop-blur-lg border-t border-[#C9A45C]/20 px-4 py-2.5 shadow-2xl">
       <div className="grid grid-cols-3 gap-2 max-w-md mx-auto">
@@ -29,7 +39,8 @@ export default function StickyMobileBar({ onOpenConsultation }: StickyMobileBarP
         </a>
 
         <button
-          onClick={onOpenConsultation}
+          type="button"
+          onClick={handleConsultation}
           className="py-2.5 rounded-xl bg-[#C9A45C] text-[#042926] text-[11px] font-bold flex flex-col items-center justify-center gap-1 shadow-md active:scale-95 transition-all cursor-pointer"
         >
           <Calendar className="w-3.5 h-3.5" />

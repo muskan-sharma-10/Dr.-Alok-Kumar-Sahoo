@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
 import { siteImages } from "@/data/siteImages";
 import { mainNavItems, locationNavItems } from "@/data/navigation";
+import { useConsultation } from "@/context/ConsultationContext";
 
 interface FooterProps {
   onOpenConsultation?: () => void;
@@ -23,6 +24,15 @@ const serviceLinks = [
 ];
 
 export default function Footer({ onOpenConsultation }: FooterProps) {
+  const { openConsultation } = useConsultation();
+
+  const handleConsultation = () => {
+    if (onOpenConsultation) {
+      onOpenConsultation();
+    } else {
+      openConsultation();
+    }
+  };
   return (
     <footer className="relative bg-[#042926] text-white overflow-hidden">
       {/* Top CTA Strip */}
@@ -42,7 +52,8 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            onClick={onOpenConsultation}
+            type="button"
+            onClick={handleConsultation}
             className="group flex items-center gap-2 px-7 py-3 rounded-xl bg-[#C9A45C] text-[#042926] font-semibold text-[14px] hover:bg-[#E0C98A] transition-all duration-300 cursor-pointer flex-shrink-0"
           >
             Book Consultation
