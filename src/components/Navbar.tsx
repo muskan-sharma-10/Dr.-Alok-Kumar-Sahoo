@@ -184,126 +184,86 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
         <div className={`transition-all duration-300 ${
           scrolled ? "bg-[#FAF8F5]/90 backdrop-blur-md py-1 border-b border-[#0B4F4A]/10 shadow-sm" : "py-1.5 bg-transparent"
         }`}>
-          <div className={`mx-auto transition-all duration-300 ${
-            scrolled ? "max-w-[1440px] w-full px-4 sm:px-6 lg:px-8" : "w-fit max-w-fit px-4"
-          }`}>
-            <div className={`bg-white rounded-2xl border border-[#0B4F4A]/10 transition-all duration-300 ${
-              scrolled
-                ? "w-full px-4.5 py-1.5 sm:py-2 shadow-[0_10px_30px_rgba(7,58,55,0.1)] border-[#0B4F4A]/20"
-                : "w-fit px-2.5 py-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+          <div className="w-fit max-w-fit mx-auto px-4">
+            <div className={`bg-white rounded-2xl border border-[#0B4F4A]/10 px-3.5 py-1.5 sm:py-2 transition-all duration-300 ${
+              scrolled ? "shadow-[0_10px_30px_rgba(7,58,55,0.12)] border-[#0B4F4A]/20" : "shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
             }`}>
               
               {/* Navigation Links Bar */}
-              <div className={`flex items-center transition-all duration-300 min-h-[40px] ${
-                scrolled ? "justify-between w-full px-1" : "justify-center"
-              }`}>
-                {/* Left Logo (visible ONLY when sticky scrolled to balance right CTA) */}
-                {scrolled && (
-                  <div className="w-[130px] flex-shrink-0 transition-all duration-300">
-                    <Link href="/" className="relative block w-[120px] h-[28px]">
-                      <Image
-                        src={siteImages.logo.main}
-                        alt="AlloRoots"
-                        fill
-                        unoptimized
-                        sizes="120px"
-                        className="object-contain object-left"
-                      />
-                    </Link>
+              <nav className="flex items-center justify-center gap-1 xl:gap-1.5 2xl:gap-2">
+                
+                {/* Home Button with Icon */}
+                <Link
+                  href="/"
+                  className="relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-[#EAF3F1] text-[#073A37] font-semibold text-[13.5px] transition-all flex-shrink-0"
+                >
+                  <div className="w-5.5 h-5.5 rounded-lg bg-white flex items-center justify-center text-[#073A37] shadow-2xs">
+                    <Home className="w-3 h-3" />
                   </div>
-                )}
+                  <span>Home</span>
+                  {/* Subtle active indicator bar */}
+                  <span className="absolute -bottom-2 left-2.5 right-2.5 h-[2px] bg-[#073A37] rounded-full" />
+                </Link>
 
-                {/* Center Nav Items */}
-                <nav className="flex items-center justify-center gap-1 xl:gap-1.5 2xl:gap-2">
-                  
-                  {/* Home Button with Icon */}
-                  <Link
-                    href="/"
-                    className="relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-[#EAF3F1] text-[#073A37] font-semibold text-[13.5px] transition-all"
+                {/* Dropdown Links */}
+                {desktopNav.map((item) => (
+                  <div
+                    key={item.label}
+                    className="relative flex-shrink-0"
+                    onMouseEnter={() => handleMouseEnter(item.label)}
+                    onMouseLeave={handleMouseLeave}
                   >
-                    <div className="w-5.5 h-5.5 rounded-lg bg-white flex items-center justify-center text-[#073A37] shadow-2xs">
-                      <Home className="w-3 h-3" />
-                    </div>
-                    <span>Home</span>
-                    {/* Subtle active indicator bar */}
-                    <span className="absolute -bottom-2 left-2.5 right-2.5 h-[2px] bg-[#073A37] rounded-full" />
-                  </Link>
-
-                  {/* Dropdown Links */}
-                  {desktopNav.map((item) => (
-                    <div
-                      key={item.label}
-                      className="relative"
-                      onMouseEnter={() => handleMouseEnter(item.label)}
-                      onMouseLeave={handleMouseLeave}
+                    <Link
+                      href={item.href || "#"}
+                      className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-[13.5px] font-semibold transition-colors ${
+                        activeDropdown === item.label
+                          ? "text-[#073A37] bg-[#073A37]/6"
+                          : "text-[#202A28] hover:text-[#073A37]"
+                      }`}
                     >
-                      <Link
-                        href={item.href || "#"}
-                        className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-[13.5px] font-semibold transition-colors ${
-                          activeDropdown === item.label
-                            ? "text-[#073A37] bg-[#073A37]/6"
-                            : "text-[#202A28] hover:text-[#073A37]"
-                        }`}
-                      >
-                        <span>{item.label}</span>
-                        {(item.simpleLinks || item.categories) && (
-                          <ChevronDown
-                            className={`w-3 h-3 transition-transform duration-250 ${
-                              activeDropdown === item.label ? "rotate-180 text-[#073A37]" : "text-[#7B8F8C]"
-                            }`}
-                          />
-                        )}
-                      </Link>
+                      <span>{item.label}</span>
+                      {(item.simpleLinks || item.categories) && (
+                        <ChevronDown
+                          className={`w-3 h-3 transition-transform duration-250 ${
+                            activeDropdown === item.label ? "rotate-180 text-[#073A37]" : "text-[#7B8F8C]"
+                          }`}
+                        />
+                      )}
+                    </Link>
 
-                      {/* Dropdown Menu Container */}
-                      <AnimatePresence>
-                        {activeDropdown === item.label && (item.simpleLinks || item.categories) && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 6, scale: 0.98 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: 4, scale: 0.98 }}
-                            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                            className={
-                              item.label === "Services"
-                                ? "absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 w-[920px] max-w-[90vw]"
-                                : item.isMega
-                                ? "absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 w-[820px]"
-                                : "absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 w-[300px]"
-                            }
-                            onMouseEnter={() => handleMouseEnter(item.label)}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            <div className="bg-white rounded-2xl shadow-[0_20px_60px_-12px_rgba(11,79,74,0.18)] border border-[#0B4F4A]/10 overflow-hidden">
-                              {item.label === "Services" ? (
-                                <ServicesMegaMenu />
-                              ) : item.isMega ? (
-                                <MegaMenuContent categories={item.categories || []} />
-                              ) : (
-                                <SimpleDropdown links={item.simpleLinks || []} />
-                              )}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ))}
-                </nav>
-
-                {/* Right side compact Book Appointment CTA button (visible ONLY when sticky scrolled) */}
-                {scrolled && (
-                  <div className="w-[150px] flex-shrink-0 flex justify-end transition-all duration-300">
-                    <button
-                      type="button"
-                      onClick={handleConsultationClick}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#073A37] hover:bg-[#0B4F4A] text-white text-[12px] font-semibold tracking-wide transition-all shadow-sm hover:shadow cursor-pointer whitespace-nowrap"
-                    >
-                      <CalendarDays className="w-3 h-3 text-white" />
-                      <span>Book Appointment</span>
-                      <ArrowRight className="w-3 h-3 text-[#C6A15B]" />
-                    </button>
+                    {/* Dropdown Menu Container */}
+                    <AnimatePresence>
+                      {activeDropdown === item.label && (item.simpleLinks || item.categories) && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 4, scale: 0.98 }}
+                          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                          className={
+                            item.label === "Services"
+                              ? "absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 w-[920px] max-w-[90vw]"
+                              : item.isMega
+                              ? "absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 w-[820px]"
+                              : "absolute top-full left-1/2 -translate-x-1/2 pt-2.5 z-50 w-[300px]"
+                          }
+                          onMouseEnter={() => handleMouseEnter(item.label)}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          <div className="bg-white rounded-2xl shadow-[0_20px_60px_-12px_rgba(11,79,74,0.18)] border border-[#0B4F4A]/10 overflow-hidden">
+                            {item.label === "Services" ? (
+                              <ServicesMegaMenu />
+                            ) : item.isMega ? (
+                              <MegaMenuContent categories={item.categories || []} />
+                            ) : (
+                              <SimpleDropdown links={item.simpleLinks || []} />
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                )}
-              </div>
+                ))}
+              </nav>
 
             </div>
           </div>
