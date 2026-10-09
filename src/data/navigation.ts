@@ -12,6 +12,7 @@ export const mainNavItems: NavItem[] = [
   { name: "Reviews", href: "/reviews" },
   { name: "Blogs", href: "/blog" },
   { name: "FAQ", href: "/faq" },
+  { name: "Medical Tourism", href: "/medical-tourism" },
   { name: "Contact", href: "/contact-us" },
 ];
 
