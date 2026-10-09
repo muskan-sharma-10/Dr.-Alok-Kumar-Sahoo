@@ -45,6 +45,7 @@ export const metadata: Metadata = {
 
 import FloatingActions from "@/components/FloatingActions";
 import CustomCursor from "@/components/CustomCursor";
+import IntroAnimation from "@/components/IntroAnimation";
 import { ConsultationProvider } from "@/context/ConsultationContext";
 
 export default function RootLayout({
@@ -56,6 +57,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSerif.variable} ${manrope.variable} scroll-smooth`}>
       <body className="font-sans antialiased">
         <ConsultationProvider>
+          <IntroAnimation />
           <CustomCursor />
           {children}
           <FloatingActions />
