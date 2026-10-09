@@ -65,10 +65,10 @@ export default function CostCalculator({ onOpenConsultation }: CostCalculatorPro
 
             <button
               onClick={onOpenConsultation}
-              className="group mt-7 inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#0B4F4A] text-white font-semibold text-[15px] hover:bg-[#073A37] transition-all duration-300 shadow-xl shadow-[#0B4F4A]/20 cursor-pointer hover:scale-[1.01]"
+              className="group mt-6 sm:mt-7 inline-flex items-center gap-2 sm:gap-2.5 px-4.5 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-[#0B4F4A] text-white font-semibold text-[13px] sm:text-[15px] hover:bg-[#073A37] transition-all duration-300 shadow-md sm:shadow-xl shadow-[#0B4F4A]/20 cursor-pointer hover:scale-[1.01]"
             >
               Get Exact Quote
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </ScrollReveal>
 

@@ -196,9 +196,9 @@ export default function ContactFormSection() {
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#0B4F4A] text-white font-semibold text-[15px] hover:bg-[#073A37] transition-all duration-300 hover:shadow-xl hover:shadow-[#0B4F4A]/20 cursor-pointer hover:scale-[1.01]"
+                    className="w-full flex items-center justify-center gap-2 py-3 sm:py-4 rounded-xl bg-[#0B4F4A] text-white font-semibold text-[13.5px] sm:text-[15px] hover:bg-[#073A37] transition-all duration-300 hover:shadow-xl hover:shadow-[#0B4F4A]/20 cursor-pointer hover:scale-[1.01]"
                   >
-                    <Send className="w-4.5 h-4.5" />
+                    <Send className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                     Request Free Consultation
                   </button>
 

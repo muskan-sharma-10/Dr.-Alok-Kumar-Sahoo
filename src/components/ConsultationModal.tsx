@@ -244,7 +244,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-full bg-[#073A37] hover:bg-[#0B4F4A] text-white font-semibold text-[15px] transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer mt-2"
+                    className="w-full py-2.5 sm:py-3.5 rounded-full bg-[#073A37] hover:bg-[#0B4F4A] text-white font-semibold text-[13.5px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer mt-2"
                   >
                     <Calendar className="w-4 h-4 text-[#C6A15B]" />
                     <span>Confirm Doctor Appointment</span>

@@ -275,25 +275,25 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   </div>
 
                   {/* CTA Action Buttons */}
-                  <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pt-2">
                     <button
                       onClick={handlePrimaryClick}
-                      className="group inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#073A37] hover:bg-[#0B4F4A] text-white text-[14.5px] sm:text-[15px] font-semibold transition-all duration-300 shadow-lg shadow-[#073A37]/20 hover:shadow-xl hover:scale-[1.01] cursor-pointer"
+                      className="group inline-flex items-center gap-2 sm:gap-3 px-4.5 sm:px-8 py-2.5 sm:py-4 rounded-full bg-[#073A37] hover:bg-[#0B4F4A] text-white text-[12.5px] sm:text-[15px] font-semibold transition-all duration-300 shadow-md sm:shadow-lg shadow-[#073A37]/20 hover:shadow-xl hover:scale-[1.01] cursor-pointer"
                     >
                       <span>{slide.primaryCta.label}</span>
-                      <ArrowRight className="w-4 h-4 text-[#C6A15B] group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C6A15B] group-hover:translate-x-1 transition-transform" />
                     </button>
 
                     <button
                       onClick={handleSecondaryClick}
-                      className="inline-flex items-center gap-2.5 px-6 py-3.5 sm:py-4 rounded-full bg-white hover:bg-[#FAF7F1] border border-[#0B4F4A]/15 text-[#1A2422] text-[14px] sm:text-[14.5px] font-semibold transition-all duration-300 shadow-sm hover:shadow cursor-pointer group"
+                      className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-6 py-2.5 sm:py-4 rounded-full bg-white hover:bg-[#FAF7F1] border border-[#0B4F4A]/15 text-[#1A2422] text-[12px] sm:text-[14.5px] font-semibold transition-all duration-300 shadow-sm hover:shadow cursor-pointer group"
                     >
                       {slide.secondaryCta.action === "video" ? (
-                        <span className="w-6 h-6 rounded-full bg-[#D87852] flex items-center justify-center text-white group-hover:scale-105 transition-transform">
-                          <Play className="w-3 h-3 fill-white ml-0.5" />
+                        <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#D87852] flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+                          <Play className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-white ml-0.5" />
                         </span>
                       ) : (
-                        <ChevronRight className="w-4 h-4 text-[#C6A15B]" />
+                        <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C6A15B]" />
                       )}
                       <span>{slide.secondaryCta.label}</span>
                     </button>
@@ -486,7 +486,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                   <button
                     key={s.id}
                     onClick={() => setCurrent(idx)}
-                    className={`relative px-4 sm:px-5 py-2.5 rounded-full text-[12.5px] sm:text-[13px] font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+                    className={`relative px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-[11.5px] sm:text-[13px] font-semibold transition-all duration-300 cursor-pointer flex items-center gap-1.5 sm:gap-2 whitespace-nowrap ${
                       isActive
                         ? "bg-[#073A37] text-white shadow-md border border-[#073A37]"
                         : "bg-white text-[#1E2E2C] hover:bg-[#F3EFE6] border border-[#0B4F4A]/15 shadow-sm"

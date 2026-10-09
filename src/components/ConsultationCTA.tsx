@@ -72,29 +72,29 @@ export default function ConsultationCTA({ onOpenConsultation }: ConsultationCTAP
         </ScrollReveal>
 
         <ScrollReveal direction="from-right" distance={60} delay={0.25}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
             <button
               onClick={onOpenConsultation}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 sm:px-9 py-4 sm:py-4.5 rounded-2xl bg-[#D87852] hover:bg-[#c46844] text-white font-bold text-[15.5px] transition-all duration-300 shadow-xl shadow-[#D87852]/30 hover:scale-[1.02] cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-5 sm:px-9 py-2.5 sm:py-4.5 rounded-xl sm:rounded-2xl bg-[#D87852] hover:bg-[#c46844] text-white font-bold text-[13.5px] sm:text-[15.5px] transition-all duration-300 shadow-lg sm:shadow-xl shadow-[#D87852]/30 hover:scale-[1.02] cursor-pointer"
             >
               <span>Book Free Consultation</span>
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             <a
               href="#calculator"
               onClick={scrollToCalculator}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:py-4.5 rounded-2xl bg-white/10 hover:bg-white/18 border border-white/20 text-white font-semibold text-[15px] backdrop-blur-md transition-all duration-300 hover:border-white/40 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-4.5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/18 border border-white/20 text-white font-semibold text-[13px] sm:text-[15px] backdrop-blur-md transition-all duration-300 hover:border-white/40 cursor-pointer"
             >
-              <Calculator className="w-4.5 h-4.5 text-[#C6A15B]" />
+              <Calculator className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#C6A15B]" />
               <span>Calculate Graft Cost</span>
             </a>
 
             <Link
               href="/results"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:py-4.5 rounded-2xl bg-white/10 hover:bg-white/18 border border-white/20 text-white font-semibold text-[15px] backdrop-blur-md transition-all duration-300 hover:border-white/40 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-4.5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/18 border border-white/20 text-white font-semibold text-[13px] sm:text-[15px] backdrop-blur-md transition-all duration-300 hover:border-white/40 cursor-pointer"
             >
-              <Eye className="w-4.5 h-4.5 text-[#C6A15B]" />
+              <Eye className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#C6A15B]" />
               <span>View 100+ Results</span>
             </Link>
           </div>

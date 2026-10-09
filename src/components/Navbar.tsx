@@ -158,20 +158,21 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
             <button
               type="button"
               onClick={handleConsultationClick}
-              className="inline-flex items-center gap-2 px-4.5 sm:px-5.5 py-1.5 sm:py-2 rounded-full bg-[#073A37] hover:bg-[#0B4F4A] text-white text-[13px] sm:text-[13.5px] font-semibold tracking-wide transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.01] cursor-pointer group"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5.5 py-1.5 sm:py-2 rounded-full bg-[#073A37] hover:bg-[#0B4F4A] text-white text-[11.5px] sm:text-[13.5px] font-semibold tracking-wide transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer group flex-shrink-0"
             >
-              <CalendarDays className="w-3.5 h-3.5 text-white flex-shrink-0" />
-              <span>Book Appointment</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#C6A15B] group-hover:translate-x-1 transition-transform duration-300" />
+              <CalendarDays className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white flex-shrink-0" />
+              <span className="sm:hidden">Book Slot</span>
+              <span className="hidden sm:inline">Book Appointment</span>
+              <ArrowRight className="hidden sm:inline w-3.5 h-3.5 text-[#C6A15B] group-hover:translate-x-1 transition-transform duration-300" />
             </button>
 
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="xl:hidden w-9 h-9 flex items-center justify-center rounded-xl bg-white border border-[#0B4F4A]/10 hover:bg-[#0B4F4A]/10 text-[#073A37] transition-colors cursor-pointer"
+              className="xl:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-white border border-[#0B4F4A]/10 hover:bg-[#0B4F4A]/10 text-[#073A37] transition-colors cursor-pointer flex-shrink-0"
               aria-label="Toggle navigation menu"
             >
-              {mobileOpen ? <X className="w-4.5 h-4.5" /> : <Menu className="w-4.5 h-4.5" />}
+              {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
 
           </div>
@@ -263,6 +264,25 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                     </AnimatePresence>
                   </div>
                 ))}
+
+                {/* Book Appointment CTA Button inside Sticky Floating Navbar (Shows ONLY on scroll) */}
+                <AnimatePresence>
+                  {scrolled && (
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.9, width: 0 }}
+                      animate={{ opacity: 1, scale: 1, width: "auto" }}
+                      exit={{ opacity: 0, scale: 0.9, width: 0 }}
+                      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                      type="button"
+                      onClick={handleConsultationClick}
+                      className="overflow-hidden inline-flex items-center gap-1.5 ml-1 xl:ml-1.5 px-3.5 py-1.5 rounded-xl bg-[#073A37] hover:bg-[#0B4F4A] text-white text-[13px] font-semibold tracking-wide transition-all duration-300 shadow-sm hover:shadow hover:scale-[1.01] cursor-pointer group flex-shrink-0"
+                    >
+                      <CalendarDays className="w-3.5 h-3.5 text-[#C6A15B] flex-shrink-0" />
+                      <span className="whitespace-nowrap">Book Appointment</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C6A15B] group-hover:translate-x-0.5 transition-transform duration-300" />
+                    </motion.button>
+                  )}
+                </AnimatePresence>
               </nav>
 
             </div>

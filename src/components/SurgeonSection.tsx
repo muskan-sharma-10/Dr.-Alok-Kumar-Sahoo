@@ -176,10 +176,11 @@ export default function SurgeonSection({ onOpenConsultation }: SurgeonSectionPro
               <button
                 onClick={onOpenConsultation}
                 data-cursor="cta"
-                className="inline-flex items-center gap-3 px-8 sm:px-9 py-4 sm:py-4.5 rounded-full bg-[#0B4F4A] text-white text-[15px] font-medium tracking-wide hover:bg-[#073A37] transition-all duration-300 shadow-xl shadow-[#0B4F4A]/20 cursor-pointer group hover:scale-[1.01]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-4.5 sm:px-9 py-2.5 sm:py-4.5 rounded-full bg-[#0B4F4A] text-white text-[12.5px] sm:text-[15px] font-medium tracking-wide hover:bg-[#073A37] transition-all duration-300 shadow-lg sm:shadow-xl shadow-[#0B4F4A]/20 cursor-pointer group hover:scale-[1.01]"
               >
-                <span>Click to Book an Appointment with Dr. Alok Sahoo</span>
-                <ArrowRight className="w-4.5 h-4.5 text-[#C6A15B] group-hover:translate-x-1.5 transition-transform" />
+                <span className="sm:hidden">Book Appointment with Dr. Alok Sahoo</span>
+                <span className="hidden sm:inline">Click to Book an Appointment with Dr. Alok Sahoo</span>
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-[#C6A15B] group-hover:translate-x-1.5 transition-transform flex-shrink-0" />
               </button>
             </div>
 

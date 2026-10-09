@@ -190,7 +190,7 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
                 <button
                   onClick={onOpenConsultation}
                   data-cursor="cta"
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#0B4F4A] text-white font-medium text-[14px] hover:bg-[#073A37] transition-colors cursor-pointer group"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 sm:py-3.5 rounded-full bg-[#0B4F4A] text-white font-medium text-[12.5px] sm:text-[14px] hover:bg-[#073A37] transition-colors cursor-pointer group"
                 >
                   <span>Book Consultation at {clinic.city}</span>
                   <ArrowRight className="w-4 h-4 text-[#C6A15B] group-hover:translate-x-1 transition-transform" />
@@ -201,7 +201,7 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="cta"
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-white border border-[#0B4F4A]/12 text-[#202A28] text-[13px] font-medium hover:bg-white/80 transition-colors"
+                  className="w-full flex items-center justify-center gap-2 py-2 sm:py-3 rounded-full bg-white border border-[#0B4F4A]/12 text-[#202A28] text-[12px] sm:text-[13px] font-medium hover:bg-white/80 transition-colors"
                 >
                   <ExternalLink className="w-3.5 h-3.5 text-[#0B4F4A]" />
                   <span>Get Directions on Google Maps</span>

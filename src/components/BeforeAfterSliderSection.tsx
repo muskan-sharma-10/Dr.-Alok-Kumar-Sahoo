@@ -83,9 +83,9 @@ export default function BeforeAfterSliderSection({ onOpenConsultation }: BeforeA
                 setSliderPosition(50);
               }}
               data-cursor="cta"
-              className={`px-5 sm:px-6 py-3 rounded-full text-[14px] font-medium whitespace-nowrap transition-all duration-300 cursor-pointer ${
+              className={`px-3.5 sm:px-6 py-2 sm:py-3 rounded-full text-[12px] sm:text-[14px] font-medium whitespace-nowrap transition-all duration-300 cursor-pointer ${
                 selectedCaseIdx === idx
-                  ? "bg-[#0B4F4A] text-white shadow-lg shadow-[#0B4F4A]/25"
+                  ? "bg-[#0B4F4A] text-white shadow-md sm:shadow-lg shadow-[#0B4F4A]/25"
                   : "bg-white text-[#202A28] hover:bg-white/80 border border-[#0B4F4A]/10"
               }`}
             >
@@ -238,10 +238,10 @@ export default function BeforeAfterSliderSection({ onOpenConsultation }: BeforeA
               <button
                 onClick={onOpenConsultation}
                 data-cursor="cta"
-                className="w-full inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-full bg-[#0B4F4A] text-white text-[15px] font-medium tracking-wide hover:bg-[#073A37] transition-all shadow-xl shadow-[#0B4F4A]/20 cursor-pointer group hover:scale-[1.01]"
+                className="w-full inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-8 py-2.5 sm:py-4.5 rounded-full bg-[#0B4F4A] text-white text-[12.5px] sm:text-[15px] font-medium tracking-wide hover:bg-[#073A37] transition-all shadow-lg sm:shadow-xl shadow-[#0B4F4A]/20 cursor-pointer group hover:scale-[1.01]"
               >
                 <span>Request Case Evaluation for Similar Hairline</span>
-                <ArrowRight className="w-4.5 h-4.5 text-[#C6A15B] group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-[#C6A15B] group-hover:translate-x-1.5 transition-transform" />
               </button>
             </div>
           </motion.div>

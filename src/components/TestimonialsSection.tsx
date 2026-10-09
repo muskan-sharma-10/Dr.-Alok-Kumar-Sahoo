@@ -92,7 +92,7 @@ export default function TestimonialsSection() {
           <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/70 backdrop-blur-md border border-[#0B4F4A]/10 self-start lg:self-end">
             <button
               onClick={() => setActiveTab("featured")}
-              className={`px-6 py-3 rounded-full text-[14px] font-semibold transition-all duration-300 cursor-pointer ${
+              className={`px-3.5 sm:px-6 py-2 sm:py-3 rounded-full text-[12px] sm:text-[14px] font-semibold transition-all duration-300 cursor-pointer ${
                 activeTab === "featured"
                   ? "bg-[#0B4F4A] text-white shadow-md shadow-[#0B4F4A]/20"
                   : "text-[#202A28] hover:text-[#0B4F4A]"
@@ -102,14 +102,14 @@ export default function TestimonialsSection() {
             </button>
             <button
               onClick={() => setActiveTab("all")}
-              className={`px-6 py-3 rounded-full text-[14px] font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+              className={`px-3.5 sm:px-6 py-2 sm:py-3 rounded-full text-[12px] sm:text-[14px] font-semibold transition-all duration-300 cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
                 activeTab === "all"
                   ? "bg-[#0B4F4A] text-white shadow-md shadow-[#0B4F4A]/20"
                   : "text-[#202A28] hover:text-[#0B4F4A]"
               }`}
             >
               <span>All Google Reviews</span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#C6A15B] text-[#073A37] font-bold">
+              <span className="text-[9.5px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full bg-[#C6A15B] text-[#073A37] font-bold">
                 163+
               </span>
             </button>
@@ -388,7 +388,7 @@ export default function TestimonialsSection() {
                 href="https://maps.google.com/?q=Alloroots+Hair+Transplant+Delhi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full bg-[#0B4F4A] text-white text-[13px] font-semibold hover:bg-[#073A37] transition-colors cursor-pointer"
+                className="px-4.5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#0B4F4A] text-white text-[12px] sm:text-[13px] font-semibold hover:bg-[#073A37] transition-colors cursor-pointer text-center"
               >
                 Review Us on Google
               </a>

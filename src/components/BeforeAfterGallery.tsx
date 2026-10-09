@@ -67,9 +67,9 @@ export default function BeforeAfterGallery({ onOpenConsultation }: BeforeAfterGa
               key={cat.key}
               onClick={() => setActiveFilter(cat.key)}
               data-cursor="cta"
-              className={`px-6 py-3 rounded-full text-[14px] font-medium transition-all duration-300 cursor-pointer ${
+              className={`px-3.5 sm:px-6 py-1.5 sm:py-3 rounded-full text-[12px] sm:text-[14px] font-medium transition-all duration-300 cursor-pointer ${
                 activeFilter === cat.key
-                  ? "bg-[#0B4F4A] text-white shadow-lg shadow-[#0B4F4A]/25"
+                  ? "bg-[#0B4F4A] text-white shadow-md sm:shadow-lg shadow-[#0B4F4A]/25"
                   : "bg-[#FBF8F3] text-[#202A28] hover:bg-[#F3EEE6] border border-[#0B4F4A]/8"
               }`}
             >
@@ -229,10 +229,10 @@ export default function BeforeAfterGallery({ onOpenConsultation }: BeforeAfterGa
                 <button
                   onClick={() => { setSelectedCase(null); onOpenConsultation?.(); }}
                   data-cursor="cta"
-                  className="w-full mt-4 flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#0B4F4A] text-white font-medium text-[14px] hover:bg-[#073A37] transition-colors cursor-pointer"
+                  className="w-full mt-4 flex items-center justify-center gap-2 py-2.5 sm:py-3.5 rounded-full bg-[#0B4F4A] text-white font-medium text-[12.5px] sm:text-[14px] hover:bg-[#073A37] transition-colors cursor-pointer"
                 >
                   <span>Consult Doctors for Similar Case</span>
-                  <ArrowRight className="w-4 h-4 text-[#C6A15B]" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C6A15B]" />
                 </button>
               </div>
             </motion.div>
