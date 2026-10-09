@@ -160,7 +160,7 @@ export default function ServicesMegaMenu() {
               ))}
             </ul>
 
-            <Link href="/contact-us" className="bg-white text-[#D87852] font-semibold text-[13px] py-2.5 px-4 rounded-full text-center flex items-center justify-center gap-2 hover:bg-[#FAF7F1] transition-colors">
+            <Link href="/hair-transplant-services" className="bg-white text-[#D87852] font-semibold text-[13px] py-2.5 px-4 rounded-full text-center flex items-center justify-center gap-2 hover:bg-[#FAF7F1] transition-colors">
               Explore All Treatments <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
