@@ -19,12 +19,12 @@ export const doctorsData: Doctor[] = [
   {
     id: "dr-alok",
     slug: "dr-alok-kumar-sahoo",
-    name: "Dr. Alok Kumar Sahoo",
+    name: "Dr. Alok Sahoo",
     role: "Chief Hair Transplant Surgeon & Founder",
     qualifications: "MBBS, MD (Dermatology & Venereology, AIIMS New Delhi)",
     institution: "AIIMS (All India Institute of Medical Sciences), New Delhi",
     experience: "10+ Years Dedicated Experience",
-    bio: "Dr. Alok Kumar Sahoo is the Chief Hair Transplant Surgeon at AlloRoots. Having completed his post-graduation (MD) from the All India Institute of Medical Sciences (AIIMS), New Delhi, and serving as an Ex-Senior Resident at AIIMS Delhi, he has personally performed over 3,000+ hair restorations with an industry-leading graft viability rate. He specializes in Realtime Bio-Enhanced FUE, natural hairline design, and complex corrective hair restoration.",
+    bio: "Dr. Alok Sahoo is the Chief Hair Transplant Surgeon at AlloRoots. Having completed his post-graduation (MD) from the All India Institute of Medical Sciences (AIIMS), New Delhi, and serving as an Ex-Senior Resident at AIIMS Delhi, he has personally performed over 3,000+ hair restorations with an industry-leading graft viability rate. He specializes in Realtime Bio-Enhanced FUE, natural hairline design, and complex corrective hair restoration.",
     specializations: [
       "Realtime Bio-Enhanced FUE Hair Transplantation",
       "Artistic Natural Hairline Design & Micro-Slit Implantation",
@@ -69,7 +69,7 @@ export const doctorsData: Doctor[] = [
     id: "dr-sanjay",
     slug: "dr-sanjay-singh",
     name: "Dr. Sanjay Singh",
-    role: "Consultant Hair Transplant Surgeon & Cosmetologist",
+    role: "Senior Hair Transplant Surgeon & Cosmetologist",
     qualifications: "MBBS, MD (AIIMS, New Delhi)",
     institution: "AIIMS, New Delhi",
     experience: "11+ Years Experience",

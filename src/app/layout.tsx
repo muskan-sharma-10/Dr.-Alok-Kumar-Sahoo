@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   keywords: [
     "Hair Transplant India",
     "Best Hair Transplant Clinic in India",
-    "Dr Alok Kumar Sahoo",
+    "Dr Alok Sahoo",
     "AIIMS Hair Transplant Doctor",
     "Realtime Bio Enhanced FUE",
     "Natural Hairline Design",
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     "Chennai Hair Transplant Clinic",
     "Uttarakhand Hair Transplant Clinic",
   ],
-  authors: [{ name: "Dr. Alok Kumar Sahoo" }],
+  authors: [{ name: "Dr. Alok Sahoo" }],
   openGraph: {
     title: "AlloRoots — Best Hair Transplant Clinic in India",
     description:
-      "Led by AIIMS New Delhi Chief Surgeon Dr. Alok Kumar Sahoo. Premium hair restoration with 99.4% graft survival rate. 4 clinics across India.",
+      "Led by AIIMS New Delhi Chief Surgeon Dr. Alok Sahoo. Premium hair restoration with 99.4% graft survival rate. 4 clinics across India.",
     url: "https://alloroots.com",
     siteName: "AlloRoots Hair Transplant Clinic",
     locale: "en_US",

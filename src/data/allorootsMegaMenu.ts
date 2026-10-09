@@ -26,7 +26,7 @@ export const navigationHierarchy: NavDropdown[] = [
     href: "/about-us",
     simpleLinks: [
       { title: "Our Story & Vision", desc: "AIIMS Alumnus Founded Excellence", href: "/about-us" },
-      { title: "Dr. Alok Kumar Sahoo", desc: "Chief Hair Transplant Surgeon", href: "/doctors" },
+      { title: "Dr. Alok Sahoo", desc: "Chief Hair Transplant Surgeon", href: "/doctors" },
       { title: "Medical Advisory Board", desc: "Expert Dermatologists Panel", href: "/doctors" },
       { title: "Clinical Infrastructure", desc: "State-of-the-art OT & Sterilization", href: "/about-us#infrastructure" },
     ],
@@ -95,7 +95,7 @@ export const navigationHierarchy: NavDropdown[] = [
     label: "Doctors",
     href: "/doctors",
     simpleLinks: [
-      { title: "Dr. Alok Kumar Sahoo", desc: "MD Dermatology (AIIMS Delhi), 10+ Yrs Exp", href: "/doctors" },
+      { title: "Dr. Alok Sahoo", desc: "MD Dermatology (AIIMS Delhi), 10+ Yrs Exp", href: "/doctors" },
       { title: "Dr. Karthik L", desc: "MBBS, MD (AIIMS Delhi), DNB, MRCP SCE", href: "/doctors" },
       { title: "Dr. Sanjay Singh", desc: "Hair Transplant Surgeon & Cosmetologist (11+ Yrs)", href: "/doctors" },
       { title: "Dr. Utpal Patel", desc: "Dermatologist & Hair Specialist (8+ Yrs)", href: "/doctors" },
@@ -103,7 +103,7 @@ export const navigationHierarchy: NavDropdown[] = [
     ],
   },
   {
-    label: "Celebrity HT Analysis",
+    label: "Celebrity HT",
     href: "/#celebrity-ht",
     simpleLinks: [
       { title: "Bollywood HT Analysis", desc: "Deep dive into actor hairline transformations", href: "/bollywood-celebrity-hair-transplant-analysis", badge: "Trending" },

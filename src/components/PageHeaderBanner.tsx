@@ -47,7 +47,7 @@ export default function PageHeaderBanner({
   ],
   bgImage,
   onOpenConsultation,
-  primaryActionLabel = "Book AIIMS Consultation",
+  primaryActionLabel = "Book Consultation",
   primaryActionHref,
   showStatCard = true,
   statCardTitle = "Verified AIIMS Clinical Standard",

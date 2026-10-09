@@ -36,7 +36,7 @@ export default function IntroAnimation() {
 
   if (stage === "done") return null;
 
-  const doctorName = "Alok Kumar Sahoo";
+  const doctorName = "Alok Sahoo";
 
   return (
     <AnimatePresence>

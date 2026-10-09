@@ -17,7 +17,7 @@ export default function DoctorSection({ onOpenConsultation }: DoctorSectionProps
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
             <GraduationCap className="w-4 h-4" /> AIIMS (Delhi) Qualified Experts
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
             Meet Your Lead Surgeon & <span className="gradient-text-gold">AIIMS Panel</span>
           </h2>
           <p className="text-slate-400 text-base">
@@ -35,7 +35,7 @@ export default function DoctorSection({ onOpenConsultation }: DoctorSectionProps
                 <div className="relative h-96 w-full rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
                   <Image
                     src="/images/hero-clinic.jpg"
-                    alt="Dr. Alok Kumar Sahoo - Senior AIIMS Hair Transplant Surgeon"
+                    alt="Dr. Alok Sahoo - Senior AIIMS Hair Transplant Surgeon"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -43,7 +43,7 @@ export default function DoctorSection({ onOpenConsultation }: DoctorSectionProps
 
                   {/* Overlay Badge */}
                   <div className="absolute bottom-4 left-4 right-4 glass-panel rounded-xl p-3 border border-white/10 text-center">
-                    <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest block">
+                    <span className="text-xs font-semibold text-amber-400 uppercase tracking-widest block">
                       AIIMS New Delhi Alumnus
                     </span>
                     <span className="text-xs text-slate-300 font-semibold">Senior M.D Dermatologist & Trichologist</span>
@@ -55,10 +55,10 @@ export default function DoctorSection({ onOpenConsultation }: DoctorSectionProps
             {/* Right Doctor Bios */}
             <div className="lg:col-span-7 space-y-6 text-left">
               <div>
-                <span className="px-3 py-1 rounded-md bg-emerald-950 text-emerald-400 text-xs font-extrabold border border-emerald-500/30">
+                <span className="px-3 py-1 rounded-md bg-emerald-950 text-emerald-400 text-xs font-semibold border border-emerald-500/30">
                   Lead Surgeon & Founder
                 </span>
-                <h3 className="text-3xl font-black text-white mt-2">Dr. Alok Kumar Sahoo</h3>
+                <h3 className="text-3xl font-semibold text-white mt-2">Dr. Alok Sahoo</h3>
                 <p className="text-amber-400 font-semibold text-sm">
                   M.D. (Dermatology, Venereology & Leprology) — AIIMS, New Delhi
                 </p>
@@ -91,7 +91,7 @@ export default function DoctorSection({ onOpenConsultation }: DoctorSectionProps
               <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center gap-4">
                 <button
                   onClick={onOpenConsultation}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl gradient-bg-gold text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-amber-500/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl gradient-bg-gold text-slate-950 font-semibold text-xs sm:text-sm shadow-lg shadow-amber-500/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
                 >
                   <Award className="w-4 h-4" />
                   <span>Book Consultation With Dr. Alok</span>

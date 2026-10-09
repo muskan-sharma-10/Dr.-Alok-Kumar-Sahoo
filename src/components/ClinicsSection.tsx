@@ -15,24 +15,24 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
   const clinic = locationsData[activeCityIdx];
 
   return (
-    <section className="relative py-24 md:py-36 bg-white overflow-hidden border-b border-[#0B4F4A]/8" id="clinics">
+    <section className="relative py-28 md:py-40 bg-white overflow-hidden border-b border-[#0B4F4A]/8" id="clinics">
       {/* Background ambient lighting */}
       <div className="absolute top-10 right-10 w-96 h-96 bg-[#0B4F4A]/3 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 pb-6 border-b border-[#0B4F4A]/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 sm:mb-20 pb-8 border-b border-[#0B4F4A]/10">
           <motion.div
             initial={{ opacity: 0, x: -70 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
+            <span className="text-[12px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
               Pan-India Surgical Centers
             </span>
-            <h2 className="text-[36px] sm:text-[48px] lg:text-[54px] font-serif font-normal text-[#202A28] leading-[1.08]">
+            <h2 className="text-[38px] sm:text-[50px] lg:text-[58px] font-serif font-normal text-[#202A28] leading-[1.08]">
               Visit AlloRoots Near You
             </h2>
           </motion.div>
@@ -41,7 +41,7 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="text-[15px] sm:text-[16px] text-[#566965] max-w-md font-normal leading-relaxed"
+            className="text-[16px] text-[#566965] max-w-md font-light leading-relaxed"
           >
             Four state-of-the-art clinics across India — each operating under strict AIIMS sterilization and surgical protocols.
           </motion.p>
@@ -53,7 +53,7 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center gap-2.5 overflow-x-auto pb-4 mb-10 no-scrollbar"
+          className="flex items-center gap-3 overflow-x-auto pb-4 mb-12 no-scrollbar"
         >
           {locationsData.map((loc, idx) => {
             const isActive = activeCityIdx === idx;
@@ -62,15 +62,15 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
                 key={loc.id}
                 onClick={() => setActiveCityIdx(idx)}
                 data-cursor="cta"
-                className={`relative px-6 py-3 rounded-full text-[13.5px] font-medium whitespace-nowrap transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+                className={`relative px-7 py-3.5 rounded-full text-[14px] sm:text-[14.5px] font-medium whitespace-nowrap transition-all duration-300 cursor-pointer flex items-center gap-2.5 ${
                   isActive
-                    ? "bg-[#0B4F4A] text-white shadow-lg shadow-[#0B4F4A]/20"
+                    ? "bg-[#0B4F4A] text-white shadow-xl shadow-[#0B4F4A]/20"
                     : "bg-[#FBF8F3] text-[#202A28] hover:bg-[#F3EEE6] border border-[#0B4F4A]/10"
                 }`}
               >
-                <MapPin className={`w-3.5 h-3.5 ${isActive ? "text-[#C6A15B]" : "text-[#566965]"}`} />
+                <MapPin className={`w-4 h-4 ${isActive ? "text-[#C6A15B]" : "text-[#566965]"}`} />
                 <span>{loc.city}</span>
-                <span className={`text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded ${
+                <span className={`text-[10.5px] uppercase font-bold tracking-wider px-2 py-0.5 rounded ${
                   isActive ? "bg-white/15 text-white/90" : "text-[#8A9E9B]"
                 }`}>
                   {loc.state}

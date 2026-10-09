@@ -80,7 +80,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
 
   return (
     <>
-      <section className="relative py-20 lg:py-28 bg-[#FBF8F3] overflow-hidden" id="services">
+      <section className="relative py-24 lg:py-36 bg-[#FBF8F3] overflow-hidden" id="services">
         {/* Subtle Ambient Background Lighting */}
         <div className="absolute top-10 left-1/4 w-[600px] h-[600px] bg-[#0B4F4A]/4 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#D87852]/5 rounded-full blur-[140px] pointer-events-none" />
@@ -88,29 +88,29 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* ═══════════ SECTION HEADER ═══════════ */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-8 border-b border-[#0B4F4A]/10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 pb-10 border-b border-[#0B4F4A]/10">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#0B4F4A]/12 shadow-sm mb-3">
-                <span className="w-2 h-2 rounded-full bg-[#D87852] animate-pulse" />
-                <span className="text-[11px] uppercase tracking-[0.18em] font-bold text-[#073A37]">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#0B4F4A]/12 shadow-sm mb-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#D87852] animate-pulse" />
+                <span className="text-[12px] uppercase tracking-[0.18em] font-bold text-[#073A37]">
                   AlloRoots Clinical Catalog &amp; Video Hub
                 </span>
               </div>
-              <h2 className="text-[34px] sm:text-[46px] lg:text-[54px] font-serif font-normal text-[#1A2422] leading-[1.08] tracking-[-0.02em]">
+              <h2 className="text-[38px] sm:text-[48px] lg:text-[58px] font-serif font-normal text-[#1A2422] leading-[1.08] tracking-[-0.02em]">
                 Explore Treatments &amp; Clinical Videos
               </h2>
             </div>
             <div className="max-w-xl">
-              <p className="text-[15px] sm:text-[16px] text-[#4A6360] leading-relaxed mb-4">
+              <p className="text-[16px] sm:text-[17px] text-[#4A6360] leading-relaxed mb-4 font-light">
                 From patent-grade Bio-Enhanced FUE hair transplants to cutting-edge Autologous Cellular Micrografts, explore our clinical procedures and watch real surgical demonstrations led by certified AIIMS New Delhi doctors.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#0B4F4A] bg-[#0B4F4A]/8 px-3 py-1 rounded-full">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#C6A15B]" />
+                <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#0B4F4A] bg-[#0B4F4A]/8 px-3.5 py-1.2 rounded-full">
+                  <ShieldCheck className="w-4 h-4 text-[#C6A15B]" />
                   100% Doctor-Led Implantation
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#D87852] bg-[#D87852]/10 px-3 py-1 rounded-full">
-                  <Sparkles className="w-3.5 h-3.5 text-[#D87852]" />
+                <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#D87852] bg-[#D87852]/10 px-3.5 py-1.2 rounded-full">
+                  <Sparkles className="w-4 h-4 text-[#D87852]" />
                   99.4% Graft Survival Guarantee
                 </span>
               </div>
@@ -118,7 +118,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
           </div>
 
           {/* ═══════════ MAIN VIEW SELECTOR (PROCEDURES VS CLINICAL VIDEOS) ═══════════ */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-white/70 backdrop-blur-md p-2 rounded-2xl border border-[#0B4F4A]/10 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-10 bg-white/70 backdrop-blur-md p-2.5 rounded-2xl border border-[#0B4F4A]/10 shadow-sm">
             
             {/* Main Tabs */}
             <div className="flex items-center gap-2.5 p-1 bg-[#EBE5DA]/70 rounded-2xl border border-[#0B4F4A]/15">
@@ -154,7 +154,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                   <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#C6A15B] animate-ping" />
                 </div>
                 <span>Watch Clinical Videos ({procedureVideos.length})</span>
-                <span className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold ${
+                <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
                   mainTab === "videos" ? "bg-white/25 text-white" : "bg-[#D87852]/15 text-[#D87852]"
                 }`}>
                   YouTube
@@ -164,7 +164,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
 
             {/* Quick Consultation CTA */}
             <div className="hidden sm:flex items-center gap-3 pr-2">
-              <span className="text-[12px] text-[#8A9E9B] font-medium">Free AIIMS Evaluation</span>
+              <span className="text-[12px] text-[#8A9E9B] font-medium">Free Hair Evaluation</span>
               <button
                 onClick={onOpenConsultation}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0B4F4A]/8 text-[#0B4F4A] hover:bg-[#0B4F4A] hover:text-white text-[12px] font-bold transition-all cursor-pointer"
@@ -322,7 +322,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
 
                             <div className="flex items-center gap-3.5 pl-2">
                               <div
-                                className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
+                                className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden transition-colors ${
                                   isSelected
                                     ? "bg-[#0B4F4A]/10 border border-[#0B4F4A]/20"
                                     : "bg-white border border-[#0B4F4A]/8 group-hover:bg-[#0B4F4A]/5"
@@ -331,10 +331,13 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                                 {service.icon ? (
                                   <Image
                                     src={service.icon}
-                                    alt={service.title}
+                                    alt=""
                                     width={28}
                                     height={28}
                                     className="object-contain"
+                                    onError={(e) => {
+                                      (e.target as HTMLElement).style.display = "none";
+                                    }}
                                   />
                                 ) : (
                                   <span className="text-[12px] font-bold text-[#0B4F4A]">
@@ -428,7 +431,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                                   videoUrl: activeService.videoUrl || "https://www.youtube.com/embed/_uxQwrsRhDA",
                                   thumbnail: activeService.image,
                                   duration: activeService.duration || "5:00 Mins",
-                                  doctor: activeService.doctorInCharge || "Dr. Alok Kumar Sahoo (AIIMS)",
+                                  doctor: activeService.doctorInCharge || "Dr. Alok Sahoo (AIIMS)",
                                   description: activeService.shortDesc,
                                   badge: activeService.badge || "Clinical Video",
                                 };
@@ -528,7 +531,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                                       videoUrl: activeService.videoUrl || "https://www.youtube.com/embed/_uxQwrsRhDA",
                                       thumbnail: activeService.image,
                                       duration: activeService.duration || "5:00 Mins",
-                                      doctor: activeService.doctorInCharge || "Dr. Alok Kumar Sahoo (AIIMS)",
+                                      doctor: activeService.doctorInCharge || "Dr. Alok Sahoo (AIIMS)",
                                       description: activeService.shortDesc,
                                       badge: activeService.badge || "Clinical Video",
                                     };
@@ -594,7 +597,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                                 videoUrl: service.videoUrl || "https://www.youtube.com/embed/_uxQwrsRhDA",
                                 thumbnail: service.image,
                                 duration: service.duration || "5:00 Mins",
-                                doctor: service.doctorInCharge || "Dr. Alok Kumar Sahoo (AIIMS)",
+                                doctor: service.doctorInCharge || "Dr. Alok Sahoo (AIIMS)",
                                 description: service.shortDesc,
                                 badge: service.badge || "Clinical Video",
                               };
@@ -773,7 +776,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                       Subscribe to AlloRoots on YouTube
                     </h4>
                     <p className="text-[12.5px] text-white/70">
-                      Watch weekly live surgery updates, patient interviews, and hair care masterclasses by Dr. Alok Kumar Sahoo.
+                      Watch weekly live surgery updates, patient interviews, and hair care masterclasses by Dr. Alok Sahoo.
                     </p>
                   </div>
                 </div>
@@ -823,7 +826,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                 onClick={onOpenConsultation}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D87852] hover:bg-[#c46844] text-white text-[13px] font-bold transition-all shadow-md cursor-pointer"
               >
-                <span>Book AIIMS Consultation</span>
+                <span>Book Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

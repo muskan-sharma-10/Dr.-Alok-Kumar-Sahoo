@@ -15,24 +15,24 @@ export default function HairRestorationStory({ onOpenConsultation }: HairRestora
 
   return (
     <>
-      <section className="relative py-24 md:py-36 bg-white overflow-hidden border-b border-[#0B4F4A]/8" id="story">
+      <section className="relative py-28 md:py-40 bg-white overflow-hidden border-b border-[#0B4F4A]/8" id="story">
         {/* Subtle ambient lighting */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#C6A15B]/5 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
             <motion.div
               initial={{ opacity: 0, x: -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
+              <span className="text-[12px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
                 Cinematic Case Narrative
               </span>
-              <h2 className="text-[38px] sm:text-[50px] lg:text-[56px] font-serif font-normal text-[#202A28] leading-[1.08]">
+              <h2 className="text-[40px] sm:text-[52px] lg:text-[60px] font-serif font-normal text-[#202A28] leading-[1.08]">
                 Hair Restoration That Works
               </h2>
             </motion.div>
@@ -41,7 +41,7 @@ export default function HairRestorationStory({ onOpenConsultation }: HairRestora
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-4 text-[16px] sm:text-[17px] text-[#566965] font-light leading-relaxed"
+              className="mt-4 text-[17px] sm:text-[18px] text-[#566965] font-light leading-relaxed"
             >
               Experience the AlloRoots difference. Our team of expert AIIMS surgeons utilizes Realtime Bio-Enhanced FUE to restore your hairline and revitalize your self-esteem.
             </motion.p>

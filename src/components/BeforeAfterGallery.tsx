@@ -28,24 +28,24 @@ export default function BeforeAfterGallery({ onOpenConsultation }: BeforeAfterGa
     : resultsData.filter((r) => r.category === activeFilter);
 
   return (
-    <section className="relative py-24 md:py-36 bg-white overflow-hidden border-t border-[#0B4F4A]/6" id="gallery">
+    <section className="relative py-28 md:py-40 bg-white overflow-hidden border-t border-[#0B4F4A]/6" id="gallery">
       {/* Decorative ambient elements */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-[#C6A15B]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#0B4F4A]/8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 sm:mb-20 pb-8 border-b border-[#0B4F4A]/8">
           <motion.div
             initial={{ opacity: 0, x: -70 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
+            <span className="text-[12px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
               Results Speak Louder Than Words
             </span>
-            <h2 className="text-[36px] sm:text-[48px] lg:text-[54px] font-serif font-normal text-[#202A28] leading-[1.08]">
+            <h2 className="text-[38px] sm:text-[50px] lg:text-[58px] font-serif font-normal text-[#202A28] leading-[1.08]">
               Before &amp; After Transformations
             </h2>
           </motion.div>
@@ -54,22 +54,22 @@ export default function BeforeAfterGallery({ onOpenConsultation }: BeforeAfterGa
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[15px] sm:text-[16px] text-[#566965] max-w-md font-normal leading-relaxed"
+            className="text-[16px] text-[#566965] max-w-md font-light leading-relaxed"
           >
-            Witness the emotional and physical transformations experienced by individuals who chose Dr. Alok Kumar Sahoo for their hair restoration journey.
+            Witness the emotional and physical transformations experienced by individuals who chose Dr. Alok Sahoo for their hair restoration journey.
           </motion.p>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap gap-2.5 mb-12">
+        <div className="flex flex-wrap gap-3 mb-14">
           {categories.map((cat) => (
             <button
               key={cat.key}
               onClick={() => setActiveFilter(cat.key)}
               data-cursor="cta"
-              className={`px-5 py-2.5 rounded-full text-[13px] font-medium transition-all duration-300 cursor-pointer ${
+              className={`px-6 py-3 rounded-full text-[14px] font-medium transition-all duration-300 cursor-pointer ${
                 activeFilter === cat.key
-                  ? "bg-[#0B4F4A] text-white shadow-md shadow-[#0B4F4A]/20"
+                  ? "bg-[#0B4F4A] text-white shadow-lg shadow-[#0B4F4A]/25"
                   : "bg-[#FBF8F3] text-[#202A28] hover:bg-[#F3EEE6] border border-[#0B4F4A]/8"
               }`}
             >
@@ -79,7 +79,7 @@ export default function BeforeAfterGallery({ onOpenConsultation }: BeforeAfterGa
         </div>
 
         {/* Staggered / Masonry Layout (varied heights and spans) */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           <AnimatePresence mode="popLayout">
             {filteredResults.slice(0, 9).map((result, index) => {
               // Staggered height styling for editorial magazine feel
@@ -231,7 +231,7 @@ export default function BeforeAfterGallery({ onOpenConsultation }: BeforeAfterGa
                   data-cursor="cta"
                   className="w-full mt-4 flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#0B4F4A] text-white font-medium text-[14px] hover:bg-[#073A37] transition-colors cursor-pointer"
                 >
-                  <span>Consult AIIMS Doctors for Similar Case</span>
+                  <span>Consult Doctors for Similar Case</span>
                   <ArrowRight className="w-4 h-4 text-[#C6A15B]" />
                 </button>
               </div>

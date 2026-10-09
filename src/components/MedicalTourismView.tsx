@@ -142,7 +142,7 @@ const packages: PackagePlan[] = [
     grafts: "4,500+ Grafts Onwards",
     duration: "2 Days Comprehensive Giga-Session",
     technique: "Bio-Enhanced FUE + Beard Donor Integration",
-    surgeon: "Chief AIIMS Master Surgeon (Dr. Alok Kumar Sahoo Team)",
+    surgeon: "Chief AIIMS Master Surgeon (Dr. Alok Sahoo Team)",
     idealFor: "Norwood Grade 6–7 severe baldness requiring maximum cosmetic coverage & body hair donor",
     highlights: [
       "Unlimited Strategic Graft Extraction (Scalp + Beard)",

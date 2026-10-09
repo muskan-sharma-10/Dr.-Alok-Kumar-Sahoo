@@ -114,7 +114,7 @@ export const testimonialsData: Testimonial[] = [
     location: "AlloRoots Clinic",
     procedure: "FUE Hair Transplant",
     quote: "The best in Odisha for hair restoration. True AIIMS doctor led expertise.",
-    fullReview: "The best in Odisha for hair restoration. Dr. Alok Kumar Sahoo and his team maintain international standards in every stage of the surgery.",
+    fullReview: "The best in Odisha for hair restoration. Dr. Alok Sahoo and his team maintain international standards in every stage of the surgery.",
     source: "Google Verified Review",
   },
   {

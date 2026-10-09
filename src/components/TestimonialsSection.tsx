@@ -62,11 +62,12 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className="relative py-24 md:py-36 bg-[#F8EDE7] overflow-hidden"
-      id="testimonials"
+      className="relative py-28 md:py-40 bg-[#F8EDE7] overflow-hidden"
+      id="reviews"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+      <div id="testimonials" className="absolute -top-28 pointer-events-none" />
       {/* Ambient background glows */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C96F4F]/6 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#C6A15B]/5 rounded-full blur-3xl pointer-events-none" />
@@ -74,15 +75,15 @@ export default function TestimonialsSection() {
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Top Header & Tab Controls */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16 pb-6 border-b border-[#0B4F4A]/10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 sm:mb-20 pb-8 border-b border-[#0B4F4A]/10">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
+            <span className="text-[12px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
               Patient Voices &amp; Verified Journeys
             </span>
-            <h2 className="text-[36px] sm:text-[48px] lg:text-[54px] font-serif font-normal text-[#202A28] leading-[1.08]">
+            <h2 className="text-[38px] sm:text-[50px] lg:text-[58px] font-serif font-normal text-[#202A28] leading-[1.08]">
               Witness the Transformation Through Their Eyes
             </h2>
-            <p className="mt-3 text-[15px] sm:text-[16px] text-[#566965] max-w-xl font-light leading-relaxed">
+            <p className="mt-3 text-[16px] text-[#566965] max-w-xl font-light leading-relaxed">
               Every review is independently verified on Google. Read authentic accounts of painless anesthesia, 100% doctor-led precision, and lifelong confidence restored.
             </p>
           </div>
@@ -91,9 +92,9 @@ export default function TestimonialsSection() {
           <div className="flex items-center gap-2 p-1.5 rounded-full bg-white/70 backdrop-blur-md border border-[#0B4F4A]/10 self-start lg:self-end">
             <button
               onClick={() => setActiveTab("featured")}
-              className={`px-5 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-300 cursor-pointer ${
+              className={`px-6 py-3 rounded-full text-[14px] font-semibold transition-all duration-300 cursor-pointer ${
                 activeTab === "featured"
-                  ? "bg-[#0B4F4A] text-white shadow-sm"
+                  ? "bg-[#0B4F4A] text-white shadow-md shadow-[#0B4F4A]/20"
                   : "text-[#202A28] hover:text-[#0B4F4A]"
               }`}
             >
@@ -101,9 +102,9 @@ export default function TestimonialsSection() {
             </button>
             <button
               onClick={() => setActiveTab("all")}
-              className={`px-5 py-2.5 rounded-full text-[13px] font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-full text-[14px] font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                 activeTab === "all"
-                  ? "bg-[#0B4F4A] text-white shadow-sm"
+                  ? "bg-[#0B4F4A] text-white shadow-md shadow-[#0B4F4A]/20"
                   : "text-[#202A28] hover:text-[#0B4F4A]"
               }`}
             >

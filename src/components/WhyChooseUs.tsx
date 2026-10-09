@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
   const activeReason = reasons[activeIdx];
 
   return (
-    <section className="relative py-24 md:py-36 bg-[#073A37] text-white overflow-hidden" id="why-us">
+    <section className="relative py-28 md:py-40 bg-[#073A37] text-white overflow-hidden" id="why-us">
       {/* Visual background accents */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#0B4F4A] rounded-full blur-[140px] opacity-40" />
@@ -92,20 +92,20 @@ export default function WhyChooseUs() {
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Top Header */}
-        <div className="max-w-2xl mb-14 lg:mb-18">
-          <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C6A15B] block mb-2">
+        <div className="max-w-3xl mb-16 lg:mb-22">
+          <span className="text-[12px] uppercase tracking-[0.2em] font-medium text-[#C6A15B] block mb-2">
             The AlloRoots Difference
           </span>
-          <h2 className="text-[38px] sm:text-[50px] lg:text-[56px] font-serif font-normal text-white leading-[1.08]">
+          <h2 className="text-[40px] sm:text-[52px] lg:text-[60px] font-serif font-normal text-white leading-[1.08]">
             Different Reasons That Sets Us Apart from Others
           </h2>
-          <p className="mt-4 text-[16px] text-white/70 font-light leading-relaxed">
+          <p className="mt-4 text-[17px] text-white/75 font-light leading-relaxed">
             While standard clinics rely on technicians and saline baths, AlloRoots operates on AIIMS clinical rigor and proprietary bio-preservation.
           </p>
         </div>
 
         {/* Interactive Master Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
           {/* Left Column: Dynamic Visual Reveal Card (5 cols) */}
           <motion.div
@@ -122,11 +122,11 @@ export default function WhyChooseUs() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96, y: -14 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="relative rounded-[28px] overflow-hidden bg-[#042926] border border-white/15 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]"
+                className="relative rounded-[32px] overflow-hidden bg-[#042926] border border-white/15 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]"
                 data-cursor="view"
               >
                 {/* Image Showcase */}
-                <div className="relative h-[380px] sm:h-[430px] w-full overflow-hidden">
+                <div className="relative h-[420px] sm:h-[480px] w-full overflow-hidden">
                   <Image
                     src={activeReason.image}
                     alt={activeReason.title}
@@ -137,24 +137,24 @@ export default function WhyChooseUs() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#042926] via-[#042926]/40 to-transparent" />
 
                   {/* Overlaid Big Stat Badge */}
-                  <div className="absolute top-5 right-5 bg-white/95 backdrop-blur-md text-[#073A37] rounded-2xl px-4 py-2.5 shadow-xl border border-white/40">
-                    <span className="text-[22px] font-serif font-normal block leading-tight text-[#0B4F4A]">
+                  <div className="absolute top-5 right-5 bg-white/95 backdrop-blur-md text-[#073A37] rounded-2xl px-4.5 py-3 shadow-xl border border-white/40">
+                    <span className="text-[24px] font-serif font-normal block leading-tight text-[#0B4F4A]">
                       {activeReason.stat}
                     </span>
-                    <span className="text-[10px] uppercase tracking-wider text-[#566965] font-semibold">
+                    <span className="text-[10.5px] uppercase tracking-wider text-[#566965] font-bold">
                       {activeReason.statLabel}
                     </span>
                   </div>
 
                   {/* Caption */}
-                  <div className="absolute bottom-5 left-6 right-6 text-white">
-                    <p className="text-[11px] uppercase tracking-widest text-[#C6A15B] font-medium mb-1">
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <p className="text-[11.5px] uppercase tracking-widest text-[#C6A15B] font-semibold mb-1">
                       {activeReason.tagline}
                     </p>
-                    <h3 className="text-[24px] sm:text-[28px] font-serif font-normal text-white">
+                    <h3 className="text-[26px] sm:text-[30px] font-serif font-normal text-white">
                       {activeReason.title}
                     </h3>
-                    <p className="text-[13.5px] text-white/80 font-light mt-2 line-clamp-3 leading-relaxed">
+                    <p className="text-[14px] sm:text-[14.5px] text-white/85 font-light mt-2 line-clamp-3 leading-relaxed">
                       {activeReason.desc}
                     </p>
                   </div>
@@ -169,7 +169,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 space-y-2.5 order-1 lg:order-2"
+            className="lg:col-span-7 space-y-3.5 order-1 lg:order-2"
           >
             {reasons.map((reason, idx) => {
               const isActive = activeIdx === idx;
@@ -181,36 +181,36 @@ export default function WhyChooseUs() {
                   onMouseEnter={() => setActiveIdx(idx)}
                   onClick={() => setActiveIdx(idx)}
                   data-cursor="cta"
-                  className={`p-4 sm:p-5 rounded-2xl transition-all duration-300 cursor-pointer border ${
+                  className={`p-5 sm:p-5.5 rounded-2xl transition-all duration-300 cursor-pointer border ${
                     isActive
-                      ? "bg-white/10 border-[#C6A15B]/50 shadow-lg translate-x-2"
+                      ? "bg-white/10 border-[#C6A15B]/50 shadow-xl translate-x-2"
                       : "bg-white/[0.03] border-white/5 hover:bg-white/[0.06] hover:border-white/15"
                   }`}
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4.5">
                     <div
-                      className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
                         isActive
                           ? "bg-[#C6A15B] text-[#073A37]"
                           : "bg-white/5 text-[#C6A15B]"
                       }`}
                     >
-                      <Icon className="w-5 h-5" />
+                      <Icon className="w-5.5 h-5.5" />
                     </div>
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-2 mb-1">
-                        <h4 className={`text-[17px] sm:text-[19px] font-serif font-normal transition-colors ${
+                        <h4 className={`text-[18px] sm:text-[20px] font-serif font-normal transition-colors ${
                           isActive ? "text-[#C6A15B]" : "text-white"
                         }`}>
                           {reason.title}
                         </h4>
-                        <span className="text-[11px] uppercase tracking-wider font-medium text-white/40">
+                        <span className="text-[11.5px] uppercase tracking-wider font-semibold text-white/40">
                           0{idx + 1}
                         </span>
                       </div>
 
-                      <p className={`text-[13px] sm:text-[14px] leading-relaxed transition-colors ${
+                      <p className={`text-[14px] sm:text-[14.5px] leading-relaxed transition-colors ${
                         isActive ? "text-white/90" : "text-white/60 line-clamp-1 sm:line-clamp-none"
                       }`}>
                         {reason.desc}

@@ -31,7 +31,7 @@ export const locationsData: ClinicLocation[] = [
     googleMapUrl: "https://maps.google.com/?q=Alloroots+Hair+Transplant+Delhi",
     image: siteImages.clinics.delhi,
     features: [
-      "AIIMS Chief Surgeon Dr. Alok Kumar Sahoo Consultations",
+      "Chief Surgeon Dr. Alok Sahoo Consultations",
       "Realtime Bio-Enhanced FUE Advanced Surgical Suites",
       "Sapphire Micro-Slit Implantation Technology",
       "Private VIP Recovery & Relaxation Rooms",

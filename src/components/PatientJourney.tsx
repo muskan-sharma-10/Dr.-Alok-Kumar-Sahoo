@@ -231,7 +231,7 @@ export default function PatientJourney() {
 
   return (
     <section
-      className="relative py-16 sm:py-20 lg:py-24 bg-[#F3EEE6] overflow-hidden border-y border-[#0B4F4A]/8"
+      className="relative py-24 sm:py-28 lg:py-36 bg-[#F3EEE6] overflow-hidden border-y border-[#0B4F4A]/8"
       id="journey"
     >
       {/* Decorative Background Elements */}
@@ -239,7 +239,7 @@ export default function PatientJourney() {
       <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#0B4F4A]/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header Container */}
-      <div className="max-w-[1380px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-20 mb-8 sm:mb-10">
+      <div className="max-w-[1380px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-20 mb-12 sm:mb-16">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#0B4F4A]/10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -248,14 +248,14 @@ export default function PatientJourney() {
             transition={{ duration: 0.7 }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C96F4F]/10 text-[#C96F4F] text-[11px] font-semibold tracking-wider uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C96F4F]/10 text-[#C96F4F] text-[12px] font-semibold tracking-wider uppercase mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               Step-by-Step Clinical Experience
             </div>
-            <h2 className="text-[32px] sm:text-[42px] lg:text-[48px] font-serif font-normal text-[#202A28] leading-[1.12]">
+            <h2 className="text-[36px] sm:text-[46px] lg:text-[54px] font-serif font-normal text-[#202A28] leading-[1.08]">
               The Patient Journey: From Consultation to Lifetime Growth
             </h2>
-            <p className="text-[14px] sm:text-[15px] text-[#566965] mt-3 font-light max-w-xl">
+            <p className="text-[15.5px] sm:text-[16.5px] text-[#566965] mt-4 font-light max-w-xl leading-relaxed">
               Every phase of your hair restoration is scientifically structured, transparent, and personally conducted by AIIMS-trained surgeons.
             </p>
           </motion.div>

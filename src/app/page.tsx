@@ -36,61 +36,61 @@ export default function Home() {
       {/* 2. Cinematic Editorial Hero (Warm Ivory + Dr. Alok Portrait + Live Badges) */}
       <Hero onOpenConsultation={openConsultation} />
 
-      {/* 3. Trust Strip (White + Google 5.0 Star Pillar Bar) */}
+      {/* 3. Trust Strip (Google 5.0 Star Pillar Bar) */}
       <TrustStrip />
 
-      {/* 4. As Featured In — Continuous Moving Media Marquee (White + Grayscale) */}
-      <NewsSection />
-
-      {/* 5. Interactive Services Explorer (Soft Sand + Vertical Selector + Large Image Preview) */}
+      {/* 4. Our Services / Interactive Services Explorer (Catalog & YouTube Hub) */}
       <ServicesSection onOpenConsultation={openConsultation} />
 
-      {/* 6. Chief Surgeon Editorial Feature (White + Dr. Alok Parallax + AIIMS Floating Badges) */}
+      {/* 5. Chief Surgeon Editorial Feature (Dr. Alok Parallax + AIIMS Floating Badges) */}
       <SurgeonSection onOpenConsultation={openConsultation} />
 
-      {/* 7. AIIMS Expert Team Showcase (Featured Active Doctor + Carousel Selector) */}
+      {/* 6. Meet Our Expert Team of Doctors (AIIMS Faculty Panel) */}
       <ExpertTeamSection onOpenConsultation={openConsultation} />
 
-      {/* 7b. Specialized Hair Restorations (Beard, Eyebrow, Female HT, Body Hair) */}
-      <SpecialitiesSection onOpenConsultation={openConsultation} />
-
-      {/* 8. Why Choose Us (Deep Teal Accent Feature + Interactive 6-Pillar Explorer) */}
+      {/* 7. Why Choose Us (The AlloRoots Difference: 6 Clinical Pillars) */}
       <WhyChooseUs />
 
-      {/* 9. Numbers That Matter (Warm Ivory + 120px Editorial Light Serif Typography Wall) */}
+      {/* 8. Alloroots in the News (Continuous Media Coverage Marquee) */}
+      <NewsSection />
+
+      {/* 9. Specialized Hair Restorations (Beard, Eyebrow, Female HT, Body Hair) */}
+      <SpecialitiesSection onOpenConsultation={openConsultation} />
+
+      {/* 10. Numbers That Matter (3,000+ Surgeries, 99.4% Survival) */}
       <NumbersSection />
 
-      {/* 10. Draggable Before / After Comparison Slider (COMPARE Cursor + Real Cases) */}
+      {/* 11. Draggable Before / After Comparison Slider (COMPARE Real Cases) */}
       <BeforeAfterSliderSection onOpenConsultation={openConsultation} />
 
-      {/* 11. Staggered Visual Case-Study Gallery (VIEW RESULT Cursor + Detail Modal) */}
+      {/* 12. Staggered Visual Case-Study Gallery (Detail Modal) */}
       <BeforeAfterGallery onOpenConsultation={openConsultation} />
 
-      {/* 12. Patient Journey Timeline (Horizontal Scroll Driven by Vertical Scrolling) */}
+      {/* 13. Patient Journey Timeline (Microscopic Scalp Mapping to Lifetime Growth) */}
       <PatientJourney />
 
-      {/* 13. Cinematic Video Documentary Area (PLAY Cursor + HD Modal) */}
+      {/* 14. Cinematic Video Documentary Area (Clinical Film) */}
       <HairRestorationStory onOpenConsultation={openConsultation} />
 
-      {/* 14. Editorial Patient Stories & Testimonials (Soft Peach + Horizontal Sliding Cards) */}
+      {/* 15. Client Testimonials & Google Verified Reviews */}
       <TestimonialsSection />
 
-      {/* 15. Interactive Clinic Facility Selector (White + Delhi, Bhubaneswar, Chennai, Uttarakhand) */}
+      {/* 16. Our Clinics (Delhi, Bhubaneswar, Chennai, Uttarakhand) */}
       <ClinicsSection onOpenConsultation={openConsultation} />
 
-      {/* 16. Cost & 0% EMI Calculator (Norwood Stage Graft Estimator) */}
+      {/* 17. Cost & 0% EMI Calculator (Norwood Stage Graft Estimator) */}
       <CostCalculator onOpenConsultation={openConsultation} />
 
-      {/* 17. Editorial FAQ (Warm Ivory + 01/02 Animated Numbers + Expanding Answers) */}
+      {/* 18. Frequently Asked Questions (FAQ) */}
       <FaqSection />
 
-      {/* 18. Consultation CTA (Deep Teal & Champagne Accent Conversion Bar) */}
+      {/* 19. Consultation CTA (Deep Teal & Champagne Accent Conversion Bar) */}
       <ConsultationCTA onOpenConsultation={openConsultation} />
 
-      {/* 19. Contact & Appointment Booking Form */}
+      {/* 20. Contact & Appointment Booking Form */}
       <ContactFormSection />
 
-      {/* 20. Editorial Footer */}
+      {/* 21. Editorial Footer */}
       <Footer onOpenConsultation={openConsultation} />
 
       {/* Sticky Mobile Floating Action Bar */}
