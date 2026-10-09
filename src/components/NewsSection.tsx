@@ -19,25 +19,30 @@ export default function NewsSection() {
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Subtle Editorial Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8"
-        >
-          <div>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          >
             <p className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F]">
               National Recognition &amp; Media
             </p>
             <h3 className="text-[22px] sm:text-[26px] font-serif font-normal text-[#202A28] mt-1">
               Alloroots in the News
             </h3>
-          </div>
-          <p className="text-[12.5px] text-[#566965] max-w-sm">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[12.5px] text-[#566965] max-w-sm"
+          >
             Recognized nationwide across leading national publications and media channels for excellence in hair restoration.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Continuous Infinite Marquee with Grayscale to Color on Hover */}
         <div className="relative overflow-hidden py-2">

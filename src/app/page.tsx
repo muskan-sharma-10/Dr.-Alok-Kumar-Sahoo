@@ -9,6 +9,7 @@ import NewsSection from "@/components/NewsSection";
 import ServicesSection from "@/components/ServicesSection";
 import SurgeonSection from "@/components/SurgeonSection";
 import ExpertTeamSection from "@/components/ExpertTeamSection";
+import SpecialitiesSection from "@/components/SpecialitiesSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import NumbersSection from "@/components/NumbersSection";
 import BeforeAfterSliderSection from "@/components/BeforeAfterSliderSection";
@@ -56,6 +57,9 @@ export default function Home() {
 
       {/* 7. AIIMS Expert Team Showcase (Featured Active Doctor + Carousel Selector) */}
       <ExpertTeamSection onOpenConsultation={openConsultation} />
+
+      {/* 7b. Specialized Hair Restorations (Beard, Eyebrow, Female HT, Body Hair) */}
+      <SpecialitiesSection onOpenConsultation={openConsultation} />
 
       {/* 8. Why Choose Us (Deep Teal Accent Feature + Interactive 6-Pillar Explorer) */}
       <WhyChooseUs />

@@ -63,9 +63,14 @@ export default function BeforeAfterSliderSection({ onOpenConsultation }: BeforeA
               Premier Destination for Best Hair Transplant in India
             </h2>
           </div>
-          <p className="text-[15px] sm:text-[16px] text-[#566965] max-w-md font-normal leading-relaxed">
-            Discover the remarkable journey of individuals who have undergone life-changing hair restoration under the skilled hands of Dr. Alok Kumar Sahoo. Our Before and After section showcases the tangible results and renewed confidence that our patients have experienced.
-          </p>
+          <div className="max-w-xl space-y-2">
+            <p className="text-[15px] sm:text-[16px] text-[#566965] font-normal leading-relaxed">
+              Discover the remarkable journey of individuals who have undergone life-changing hair restoration under the skilled hands of Dr. Alok Kumar Sahoo.
+            </p>
+            <p className="text-[13.5px] text-[#8A9E9B] font-light leading-relaxed hidden sm:block">
+              Alloroots stands at the forefront of hair restoration in India, offering cutting-edge hair transplant solutions tailored to meet individual needs across Bhubaneswar, Chennai, Uttarakhand &amp; Delhi, where your satisfaction is our top priority.
+            </p>
+          </div>
         </div>
 
         {/* Case Switcher Tabs */}
@@ -93,7 +98,13 @@ export default function BeforeAfterSliderSection({ onOpenConsultation }: BeforeA
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Draggable Slider Canvas (7 cols) */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7"
+          >
             <div
               ref={containerRef}
               data-cursor="compare"
@@ -157,10 +168,16 @@ export default function BeforeAfterSliderSection({ onOpenConsultation }: BeforeA
                 Drag to Compare Hairline
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Verified Medical Case Details (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 space-y-6"
+          >
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-[#C96F4F]/10 text-[#C96F4F] text-[11px] font-medium uppercase tracking-wider">
@@ -227,7 +244,7 @@ export default function BeforeAfterSliderSection({ onOpenConsultation }: BeforeA
                 <ArrowRight className="w-4 h-4 text-[#C6A15B] group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

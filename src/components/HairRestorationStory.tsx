@@ -23,15 +23,28 @@ export default function HairRestorationStory({ onOpenConsultation }: HairRestora
 
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
-              Cinematic Case Narrative
-            </span>
-            <h2 className="text-[38px] sm:text-[50px] lg:text-[56px] font-serif font-normal text-[#202A28] leading-[1.08]">
-              Hair Restoration That Works
-            </h2>
-            <p className="mt-4 text-[16px] sm:text-[17px] text-[#566965] font-light leading-relaxed">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
+                Cinematic Case Narrative
+              </span>
+              <h2 className="text-[38px] sm:text-[50px] lg:text-[56px] font-serif font-normal text-[#202A28] leading-[1.08]">
+                Hair Restoration That Works
+              </h2>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-4 text-[16px] sm:text-[17px] text-[#566965] font-light leading-relaxed"
+            >
               Experience the AlloRoots difference. Our team of expert AIIMS surgeons utilizes Realtime Bio-Enhanced FUE to restore your hairline and revitalize your self-esteem.
-            </p>
+            </motion.p>
           </div>
 
           {/* Large Cinematic Video Canvas with PLAY cursor */}

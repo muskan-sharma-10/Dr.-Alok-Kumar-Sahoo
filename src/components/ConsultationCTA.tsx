@@ -35,7 +35,7 @@ export default function ConsultationCTA({ onOpenConsultation }: ConsultationCTAP
       </div>
 
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <ScrollReveal>
+        <ScrollReveal direction="from-left" distance={60}>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#C6A15B]/30 mb-6 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
             <span className="text-[11.5px] tracking-[0.14em] uppercase font-bold text-[#E6C687]">
@@ -44,14 +44,14 @@ export default function ConsultationCTA({ onOpenConsultation }: ConsultationCTAP
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.1}>
+        <ScrollReveal direction="from-left" distance={70} delay={0.1}>
           <h2 className="text-[34px] sm:text-[46px] lg:text-[54px] font-serif font-normal text-white leading-[1.1] tracking-[-0.02em]">
             Ready to Redefine Your Look with <br className="hidden sm:block" />
             <span className="text-[#E6C687] italic font-serif">Permanent, Natural</span> Hair Restoration?
           </h2>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
+        <ScrollReveal direction="from-right" distance={70} delay={0.15}>
           <p className="mt-5 text-[16px] sm:text-[17px] text-white/80 max-w-2xl mx-auto leading-relaxed font-light">
             Book a confidential evaluation with Dr. Alok Kumar Sahoo and senior AIIMS dermatologists. Get your donor density mapped and receive a transparent, personalized restoration plan.
           </p>
@@ -71,7 +71,7 @@ export default function ConsultationCTA({ onOpenConsultation }: ConsultationCTAP
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.3}>
+        <ScrollReveal direction="from-right" distance={60} delay={0.25}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mt-9">
             <button
               onClick={onOpenConsultation}

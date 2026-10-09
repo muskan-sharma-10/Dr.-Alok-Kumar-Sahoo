@@ -117,4 +117,15 @@ export const testimonialsData: Testimonial[] = [
     fullReview: "The best in Odisha for hair restoration. Dr. Alok Kumar Sahoo and his team maintain international standards in every stage of the surgery.",
     source: "Google Verified Review",
   },
+  {
+    id: "review-10",
+    patientName: "Subham Mohapatra",
+    date: "05 Jan 2025",
+    rating: 5,
+    location: "Bhubaneswar Clinic",
+    procedure: "Hairline Reconstruction & FUE",
+    quote: "Very supportive staff and Dr. Alok explained the entire procedure in complete detail. Best clinic experience.",
+    fullReview: "Had a very pleasant experience at Alloroots clinic. Dr. Alok is very friendly and all staffs are very supportive. The consultation gave me full confidence in the hair restoration plan.",
+    source: "Google Verified Review",
+  },
 ];

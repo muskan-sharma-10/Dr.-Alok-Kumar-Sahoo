@@ -3,13 +3,23 @@
 import { motion, useReducedMotion } from "framer-motion";
 import React, { ReactNode } from "react";
 
-type AnimationVariant = "fade-up" | "fade-left" | "fade-right" | "scale-in" | "fade";
+export type AnimationVariant =
+  | "fade-up"
+  | "fade-down"
+  | "fade-left"
+  | "fade-right"
+  | "from-left"
+  | "from-right"
+  | "scale-in"
+  | "fade";
 
 interface ScrollRevealProps {
   children: ReactNode;
   variant?: AnimationVariant;
+  direction?: AnimationVariant;
   delay?: number;
   duration?: number;
+  distance?: number;
   className?: string;
   viewportMargin?: string;
   once?: boolean;
@@ -17,13 +27,16 @@ interface ScrollRevealProps {
 
 export default function ScrollReveal({
   children,
-  variant = "fade-up",
+  variant: propVariant = "fade-up",
+  direction,
   delay = 0,
-  duration = 0.7,
+  duration = 0.85,
+  distance = 70,
   className = "",
-  viewportMargin = "-60px",
+  viewportMargin = "-50px",
   once = true,
 }: ScrollRevealProps) {
+  const variant = direction || propVariant;
   const shouldReduceMotion = useReducedMotion();
 
   const getVariants = () => {
@@ -37,22 +50,29 @@ export default function ScrollReveal({
     switch (variant) {
       case "fade-up":
         return {
-          hidden: { opacity: 0, y: 36 },
+          hidden: { opacity: 0, y: distance },
+          visible: { opacity: 1, y: 0 },
+        };
+      case "fade-down":
+        return {
+          hidden: { opacity: 0, y: -distance },
           visible: { opacity: 1, y: 0 },
         };
       case "fade-left":
+      case "from-left":
         return {
-          hidden: { opacity: 0, x: -36 },
+          hidden: { opacity: 0, x: -distance },
           visible: { opacity: 1, x: 0 },
         };
       case "fade-right":
+      case "from-right":
         return {
-          hidden: { opacity: 0, x: 36 },
+          hidden: { opacity: 0, x: distance },
           visible: { opacity: 1, x: 0 },
         };
       case "scale-in":
         return {
-          hidden: { opacity: 0, scale: 0.94 },
+          hidden: { opacity: 0, scale: 0.92 },
           visible: { opacity: 1, scale: 1 },
         };
       case "fade":

@@ -90,19 +90,30 @@ export default function PatientJourney() {
         {/* Top Header & Dynamic Progress */}
         <div className="max-w-[1380px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-[#0B4F4A]/10">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            >
               <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
                 Step-by-Step Clinical Experience
               </span>
               <h2 className="text-[36px] sm:text-[46px] lg:text-[52px] font-serif font-normal text-[#202A28] leading-[1.08]">
                 The Patient Journey: From Consultation to Lifetime Growth
               </h2>
-            </div>
-            <div className="flex items-center gap-4 text-[13px] text-[#566965]">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="flex items-center gap-4 text-[13px] text-[#566965]"
+            >
               <span className="font-serif text-[22px] text-[#0B4F4A]">7 Milestones</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#0B4F4A]/20" />
               <span>Scroll Vertically to Explore Timeline</span>
-            </div>
+            </motion.div>
           </div>
 
           {/* Animated Connecting Line Indicator */}

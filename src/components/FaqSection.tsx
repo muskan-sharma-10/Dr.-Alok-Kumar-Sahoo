@@ -17,7 +17,13 @@ export default function FaqSection() {
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="max-w-2xl mb-14 lg:mb-20">
+        <motion.div
+          initial={{ opacity: 0, x: -70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-2xl mb-14 lg:mb-20"
+        >
           <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
             Clinical Clarity &amp; Transparency
           </span>
@@ -27,13 +33,19 @@ export default function FaqSection() {
           <p className="mt-3 text-[16px] text-[#566965] font-light leading-relaxed">
             Essential facts on hair graft survival, pain-free anesthesia, permanence, and AIIMS doctor protocols.
           </p>
-        </div>
+        </motion.div>
 
         {/* Editorial Two-Column Master FAQ Layout: Left Questions, Right Answer */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
           {/* Left Column: List of Questions with Animated Numbers (6 cols) */}
-          <div className="lg:col-span-6 space-y-2">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 space-y-2"
+          >
             <span className="text-[11px] uppercase tracking-[0.16em] text-[#0B4F4A] font-semibold block px-3 mb-2">
               Select Question
             </span>
@@ -87,10 +99,16 @@ export default function FaqSection() {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Expanding Editorial Answer Showcase (6 cols) */}
-          <div className="lg:col-span-6 lg:sticky lg:top-28">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 lg:sticky lg:top-28"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFaq.id}
@@ -130,7 +148,7 @@ export default function FaqSection() {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
+          </motion.div>
 
         </div>
 

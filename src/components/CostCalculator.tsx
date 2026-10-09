@@ -42,7 +42,7 @@ export default function CostCalculator({ onOpenConsultation }: CostCalculatorPro
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
           {/* Left: Info */}
-          <ScrollReveal className="lg:col-span-5">
+          <ScrollReveal direction="from-left" distance={70} duration={0.85} className="lg:col-span-5">
             <p className="text-[12px] tracking-[0.15em] uppercase font-semibold text-[#D87852] mb-3">Cost Transparency</p>
             <h2 className="text-[36px] sm:text-[46px] lg:text-[50px] font-serif font-normal text-[#1E2E2C] leading-[1.08]">
               Hair Transplant Cost Calculator
@@ -73,7 +73,7 @@ export default function CostCalculator({ onOpenConsultation }: CostCalculatorPro
           </ScrollReveal>
 
           {/* Right: Calculator */}
-          <ScrollReveal delay={0.1} className="lg:col-span-7">
+          <ScrollReveal direction="from-right" distance={70} duration={0.85} delay={0.1} className="lg:col-span-7">
             <div className="bg-[#FAF7F1] rounded-2xl p-6 sm:p-8 border border-[#0B4F4A]/6">
               {/* Stage Header */}
               <div className="flex items-center gap-3 mb-6">

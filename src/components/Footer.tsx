@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
 import { siteImages } from "@/data/siteImages";
 import { mainNavItems, locationNavItems } from "@/data/navigation";
@@ -27,17 +28,26 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
       {/* Top CTA Strip */}
       <div className="border-b border-white/8">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          >
             <p className="text-[20px] font-serif text-white">Ready to start your hair restoration journey?</p>
             <p className="text-[14px] text-white/50 mt-1">Free consultation with AIIMS New Delhi doctors.</p>
-          </div>
-          <button
+          </motion.div>
+          <motion.button
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             onClick={onOpenConsultation}
             className="group flex items-center gap-2 px-7 py-3 rounded-xl bg-[#C9A45C] text-[#042926] font-semibold text-[14px] hover:bg-[#E0C98A] transition-all duration-300 cursor-pointer flex-shrink-0"
           >
             Book Consultation
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </button>
+          </motion.button>
         </div>
       </div>
 
@@ -46,7 +56,13 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
 
           {/* Brand Column */}
-          <div className="lg:col-span-2 space-y-5">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-2 space-y-5"
+          >
             <Link href="/" className="relative block w-[150px] h-[40px]">
               <Image
                 src={siteImages.logo.main}
@@ -57,7 +73,10 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
               />
             </Link>
             <p className="text-[13.5px] text-white/60 leading-relaxed max-w-[340px]">
-              At AllôRoots, we are a team of experienced dermatologists and hair transplant surgeons, alumni of AIIMS, Delhi; Led by Dr. Alok Sahoo (MBBS, MD AIIMS, New Delhi). We are committed to clinically proven hair restoration solutions.
+              At AllôRoots, we are a team of experienced dermatologists and hair transplant surgeons, alumni of AIIMS, Delhi; Led by Dr. Alok Sahoo (MBBS, MD AIIMS, New Delhi). We are committed to innovation, providing clinically proven solutions for all hair restoration, with customized plans prescribed exclusively by experienced doctors.
+            </p>
+            <p className="text-[12.5px] text-white/50 leading-relaxed max-w-[340px]">
+              Beyond hair transplants, Alloroots offers an extensive suite of services, including Hair fall treatment, Scalp Micropigmentation, Beard &amp; Eyebrow restoration, regenerative hair treatments, PRP and GFC.
             </p>
 
             {/* Contact */}
@@ -111,87 +130,108 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
                 <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Quick Links */}
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[#C9A45C] mb-4">Quick Links</p>
-            <ul className="space-y-2.5">
-              {mainNavItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-[13.5px] text-white/50 hover:text-white transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[#C9A45C] mb-4">Services</p>
-            <ul className="space-y-2.5">
-              {serviceLinks.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-[13.5px] text-white/50 hover:text-white transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Clinics */}
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[#C9A45C] mb-4">Our Clinics</p>
-            <ul className="space-y-3">
-              {locationNavItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-start gap-2"
-                  >
-                    <MapPin className="w-3.5 h-3.5 text-white/30 flex-shrink-0 mt-0.5" />
-                    <span className="text-[13.5px] text-white/50 group-hover:text-white transition-colors">{item.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* Appointment CTA */}
-            <div className="mt-6 p-4 rounded-xl bg-white/5 border border-white/8">
-              <p className="text-[12px] font-semibold text-white/70 mb-2">Need Help?</p>
-              <a
-                href="tel:+919717503031"
-                className="group flex items-center gap-2 text-[14px] font-semibold text-[#C9A45C] hover:text-[#E0C98A] transition-colors"
-              >
-                Call Now
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+          {/* Nav & Services & Clinics Columns (3 cols from right) */}
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-8"
+          >
+            {/* Quick Links */}
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[#C9A45C] mb-4">Quick Links</p>
+              <ul className="space-y-2.5">
+                {mainNavItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-[13.5px] text-white/50 hover:text-white transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+
+            {/* Services */}
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[#C9A45C] mb-4">Services</p>
+              <ul className="space-y-2.5">
+                {serviceLinks.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-[13.5px] text-white/50 hover:text-white transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Clinics */}
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-[#C9A45C] mb-4">Our Clinics</p>
+              <ul className="space-y-3">
+                {locationNavItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="group flex items-start gap-2"
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-white/30 flex-shrink-0 mt-0.5" />
+                      <span className="text-[13.5px] text-white/50 group-hover:text-white transition-colors">{item.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Appointment CTA */}
+              <div className="mt-6 p-4 rounded-xl bg-white/5 border border-white/8">
+                <p className="text-[12px] font-semibold text-white/70 mb-2">Need Help?</p>
+                <a
+                  href="tel:+919717503031"
+                  className="group flex items-center gap-2 text-[14px] font-semibold text-[#C9A45C] hover:text-[#E0C98A] transition-colors"
+                >
+                  Call Now
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-white/8">
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-white/30">
-            © {new Date().getFullYear()} AlloRoots Hair Transplant Clinic. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4 text-[12px] text-white/30">
+          <motion.p
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-[12px] text-white/40"
+          >
+            Copyright © 2026 Quizox Health care pvt. ltd. All rights reserved. • AlloRoots Hair Transplant Clinic
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="flex items-center gap-4 text-[12px] text-white/30"
+          >
             <Link href="/privacy-policy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
             <span>·</span>
             <Link href="/terms" className="hover:text-white/60 transition-colors">Terms of Service</Link>
             <span>·</span>
             <Link href="/sitemap.xml" className="hover:text-white/60 transition-colors">Sitemap</Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </footer>

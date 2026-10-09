@@ -278,7 +278,13 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   
                   {/* Left Column: Procedure List */}
-                  <div className="lg:col-span-5 space-y-2 max-h-[720px] overflow-y-auto pr-1 select-none scrollbar-thin">
+                  <motion.div
+                    initial={{ opacity: 0, x: -70 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                    className="lg:col-span-5 space-y-2 max-h-[720px] overflow-y-auto pr-1 select-none scrollbar-thin"
+                  >
                     <p className="text-[11px] uppercase tracking-[0.16em] font-bold text-[#8A9E9B] mb-2 px-2">
                       Select Procedure ({filteredServices.length} Available)
                     </p>
@@ -367,10 +373,16 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
                         );
                       })
                     )}
-                  </div>
+                  </motion.div>
 
                   {/* Right Column: Procedure Showcase Card */}
-                  <div className="lg:col-span-7">
+                  <motion.div
+                    initial={{ opacity: 0, x: 70 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                    className="lg:col-span-7"
+                  >
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={activeService.id}
@@ -543,7 +555,7 @@ export default function ServicesSection({ onOpenConsultation }: ServicesSectionP
 
                       </motion.div>
                     </AnimatePresence>
-                  </div>
+                  </motion.div>
 
                 </div>
               )}

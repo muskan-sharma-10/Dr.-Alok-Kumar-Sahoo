@@ -48,7 +48,13 @@ export default function ExpertTeamSection({ onOpenConsultation }: ExpertTeamProp
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Large Featured Active Doctor Showcase (7 cols) */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeDoc.id}
@@ -128,10 +134,16 @@ export default function ExpertTeamSection({ onOpenConsultation }: ExpertTeamProp
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
+          </motion.div>
 
           {/* Right Column: Interactive Doctor Selector Carousel (5 cols) */}
-          <div className="lg:col-span-5 space-y-4">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 space-y-4"
+          >
             <div className="flex items-center justify-between mb-2">
               <span className="text-[12px] uppercase tracking-[0.14em] font-semibold text-[#0B4F4A]">
                 Select Surgeon (0{activeDoctorIdx + 1} / 0{doctorsData.length})
@@ -199,7 +211,7 @@ export default function ExpertTeamSection({ onOpenConsultation }: ExpertTeamProp
                 );
               })}
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

@@ -49,7 +49,13 @@ export default function SurgeonSection({ onOpenConsultation }: SurgeonSectionPro
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column: Parallax Portrait with Floating Badges (5 cols) */}
-          <div className="lg:col-span-5 relative">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative"
+          >
             <motion.div
               style={{ y: imageParallaxY }}
               className="relative mx-auto max-w-[440px] lg:max-w-none"
@@ -111,10 +117,17 @@ export default function SurgeonSection({ onOpenConsultation }: SurgeonSectionPro
                 </div>
               </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Editorial Details & Doctor's Pledge (7 cols) */}
-          <motion.div style={{ y: textParallaxY }} className="lg:col-span-7 space-y-7">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            style={{ y: textParallaxY }}
+            className="lg:col-span-7 space-y-7"
+          >
 
             <div className="space-y-3">
               <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#0B4F4A]/6 text-[#0B4F4A] text-[12px] font-medium uppercase tracking-wider">

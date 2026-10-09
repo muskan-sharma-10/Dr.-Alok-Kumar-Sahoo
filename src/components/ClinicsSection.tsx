@@ -23,21 +23,38 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 pb-6 border-b border-[#0B4F4A]/10">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
               Pan-India Surgical Centers
             </span>
             <h2 className="text-[36px] sm:text-[48px] lg:text-[54px] font-serif font-normal text-[#202A28] leading-[1.08]">
               Visit AlloRoots Near You
             </h2>
-          </div>
-          <p className="text-[15px] sm:text-[16px] text-[#566965] max-w-md font-normal leading-relaxed">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="text-[15px] sm:text-[16px] text-[#566965] max-w-md font-normal leading-relaxed"
+          >
             Four state-of-the-art clinics across India — each operating under strict AIIMS sterilization and surgical protocols.
-          </p>
+          </motion.p>
         </div>
 
         {/* City Selector Tabs with Moving Indicator */}
-        <div className="flex items-center gap-2.5 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="flex items-center gap-2.5 overflow-x-auto pb-4 mb-10 no-scrollbar"
+        >
           {locationsData.map((loc, idx) => {
             const isActive = activeCityIdx === idx;
             return (
@@ -61,7 +78,7 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
               </button>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Active Clinic Editorial Master Layout */}
         <AnimatePresence mode="wait">
@@ -74,7 +91,13 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch"
           >
             {/* Left Column: Large Authentic Clinic Photography (7 cols) */}
-            <div className="lg:col-span-7 relative">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-7 relative"
+            >
               <div
                 className="relative h-[380px] sm:h-[460px] w-full rounded-[32px] overflow-hidden bg-[#202A28] shadow-[0_20px_50px_-12px_rgba(11,79,74,0.14)] border border-[#0B4F4A]/10 group"
                 data-cursor="view"
@@ -101,10 +124,16 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column: Address, Phone, Amenities, CTA (5 cols) */}
-            <div className="lg:col-span-5 bg-[#FBF8F3] rounded-[32px] p-7 sm:p-9 border border-[#0B4F4A]/8 shadow-sm flex flex-col justify-between space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-5 bg-[#FBF8F3] rounded-[32px] p-7 sm:p-9 border border-[#0B4F4A]/8 shadow-sm flex flex-col justify-between space-y-6"
+            >
               
               <div className="space-y-5">
                 <div>
@@ -179,7 +208,7 @@ export default function ClinicsSection({ onOpenConsultation }: ClinicsSectionPro
                 </a>
               </div>
 
-            </div>
+            </motion.div>
           </motion.div>
         </AnimatePresence>
 

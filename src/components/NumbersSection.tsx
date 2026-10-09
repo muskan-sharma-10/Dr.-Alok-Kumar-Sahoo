@@ -48,10 +48,10 @@ export default function NumbersSection() {
           {/* Left Column: Massive Editorial Hero Stat (6 cols) */}
           <motion.div
             style={{ y: subtleParallax }}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-6 space-y-4 pb-4 lg:border-r border-[#0B4F4A]/10 lg:pr-12"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#C6A15B]/40 text-[#0B4F4A] text-[11px] font-medium uppercase tracking-wider">
@@ -75,7 +75,13 @@ export default function NumbersSection() {
           </motion.div>
 
           {/* Right Column: Flowing Typographic Metrics (6 cols) */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10"
+          >
 
             {/* Metric 1 */}
             <motion.div
@@ -154,7 +160,7 @@ export default function NumbersSection() {
               </p>
             </motion.div>
 
-          </div>
+          </motion.div>
 
         </div>
 

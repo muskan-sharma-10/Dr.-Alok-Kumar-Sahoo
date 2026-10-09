@@ -113,7 +113,12 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
         <div className="flex flex-col lg:flex-row flex-1 min-h-0">
 
           {/* ════ RIGHT PANEL: Slider (top on mobile) ════ */}
-          <div className="relative w-full h-[65vw] sm:h-[50vw] lg:min-h-[580px] lg:h-auto lg:flex-1 order-1 lg:order-2 overflow-hidden bg-[#073A37]">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full h-[65vw] sm:h-[50vw] lg:min-h-[580px] lg:h-auto lg:flex-1 order-1 lg:order-2 overflow-hidden bg-[#073A37]"
+          >
             <div className="absolute inset-0" style={{ perspective: "1400px" }}>
               <AnimatePresence mode="wait">
                 {slide.type === "doctor" ? (
@@ -258,10 +263,15 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 </div>
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* ════ LEFT PANEL: Text (bottom on mobile) ════ */}
-          <div className="w-full lg:flex-1 flex flex-col justify-center py-8 lg:py-12 xl:py-14 px-6 sm:px-10 lg:px-12 xl:px-16 2xl:px-20 relative z-10 order-2 lg:order-1">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full lg:flex-1 flex flex-col justify-center py-8 lg:py-12 xl:py-14 px-6 sm:px-10 lg:px-12 xl:px-16 2xl:px-20 relative z-10 order-2 lg:order-1"
+          >
 
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -372,7 +382,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 ))}
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Stats bar — desktop only */}

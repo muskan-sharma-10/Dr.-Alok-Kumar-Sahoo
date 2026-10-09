@@ -108,7 +108,13 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
           {/* Left Column: Dynamic Visual Reveal Card (5 cols) */}
-          <div className="lg:col-span-5 relative order-2 lg:order-1">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative order-2 lg:order-1"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeReason.id}
@@ -155,10 +161,16 @@ export default function WhyChooseUs() {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
+          </motion.div>
 
           {/* Right Column: Interactive List (7 cols) */}
-          <div className="lg:col-span-7 space-y-2.5 order-1 lg:order-2">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 space-y-2.5 order-1 lg:order-2"
+          >
             {reasons.map((reason, idx) => {
               const isActive = activeIdx === idx;
               const Icon = reason.icon;
@@ -208,7 +220,7 @@ export default function WhyChooseUs() {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
 
         </div>
 

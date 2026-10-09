@@ -36,17 +36,28 @@ export default function BeforeAfterGallery({ onOpenConsultation }: BeforeAfterGa
 
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#0B4F4A]/8">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C96F4F] block mb-2">
               Results Speak Louder Than Words
             </span>
             <h2 className="text-[36px] sm:text-[48px] lg:text-[54px] font-serif font-normal text-[#202A28] leading-[1.08]">
               Before &amp; After Transformations
             </h2>
-          </div>
-          <p className="text-[15px] sm:text-[16px] text-[#566965] max-w-md font-normal leading-relaxed">
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[15px] sm:text-[16px] text-[#566965] max-w-md font-normal leading-relaxed"
+          >
             Witness the emotional and physical transformations experienced by individuals who chose Dr. Alok Kumar Sahoo for their hair restoration journey.
-          </p>
+          </motion.p>
         </div>
 
         {/* Filter Pills */}
